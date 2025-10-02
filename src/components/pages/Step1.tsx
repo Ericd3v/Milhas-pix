@@ -16,10 +16,10 @@ return (
       
         <div className="card">
           <div className="programs">
-            <button><img src={azul} alt="Azul" /></button>
-            <button><img src={smiles} alt="Smiles" /></button>
-            <button><img src={pass} alt="Latam Pass" /></button>
-            <button><img src={portugal} alt="TAP" /></button>
+            <button id="btn-programs"><img src={azul} alt="Azul" /></button>
+            <button id="btn-programs"><img src={smiles} alt="Smiles" /></button>
+            <button id="btn-programs"><img src={pass} alt="Latam Pass" /></button>
+            <button id="btn-programs"><img src={portugal} alt="TAP" /></button>
           </div>
 
           <form
@@ -30,7 +30,7 @@ return (
             }}
           >
             <label>
-              Produto
+              <h2>Produto</h2>
               <select defaultValue="liminar" >
                 <option value="liminar">Liminar</option>
                 <option value="outro">Outro</option>
@@ -38,8 +38,8 @@ return (
             </label>
 
             <label>
-              CPFs Disponíveis
-              <input className="step-ilimitado" placeholder="Ilimitado" required />
+              <h2>CPFs Disponíveis</h2>
+              <input className="step-ilimitado" placeholder="Ilimitado" type="number" required />
             </label>
 
             <div className="actions">

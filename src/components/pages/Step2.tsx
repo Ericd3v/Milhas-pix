@@ -76,8 +76,8 @@ export default function Step2() {
           <h2>02. Ofereça suas milhas</h2>
 
           <form onSubmit={handleProceed} className="form-vertical">
-            <label>
-              Quero receber
+            <label className="step2-label">
+             <h3>Quando deseja receber o pagamento?</h3>
               <PillGroup
                 options={[
                   "Imediato",
@@ -125,7 +125,7 @@ export default function Step2() {
               >
                 ← Voltar
               </button>
-              <button type="submit" className="btn primary">
+              <button type="submit" className="btn-primary">
                 Prosseguir →
               </button>
             </div>
@@ -136,7 +136,7 @@ export default function Step2() {
           <h3>Ranking das ofertas</h3>
           <ul className="ranking">
             {loading ? (
-              <li className="muted">Carregando...</li>
+              <li className="muted"></li>
             ) : (
               <RankingList ranking={ranking} />
             )}
