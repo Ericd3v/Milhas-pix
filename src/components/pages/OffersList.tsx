@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import azul from "../../assets/images/azulincon.png";
 import smiles from "../../assets/images/smileicon.png";
-import { SearchBox } from "../searchbox/SearchBox"; 
+import { SearchBox } from "../SearchBox/SearchBox"; 
 
 // Tipagem de cada oferta
 type Offer = {
