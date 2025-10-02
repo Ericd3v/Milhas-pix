@@ -13,7 +13,7 @@ return (
       {/* Conteúdo principal */}
       <section className="content">
        <h2 className="text-step1"> <span className="one">01.</span> Escolha o programa de fidelidade</h2>
-
+      
         <div className="card">
           <div className="programs">
             <button><img src={azul} alt="Azul" /></button>
@@ -43,7 +43,7 @@ return (
             </label>
 
             <div className="actions">
-              <button type="submit" className="btn primary">
+              <button type="submit" className="btn-primary">
                 Prosseguir →
               </button>
             </div>

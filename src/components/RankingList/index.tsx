@@ -15,6 +15,7 @@ export default function RankingList({ ranking }: { ranking: RankingItem[] }) {
               ? "highlight"
               : undefined
           }
+          
         >
           <strong>#{r.position}</strong>{" "}
           <span>
@@ -25,3 +26,4 @@ export default function RankingList({ ranking }: { ranking: RankingItem[] }) {
     </>
   );
 }
+

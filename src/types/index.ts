@@ -1,4 +1,6 @@
 export type RankingItem = {
+  isUser: any;
+  value: any;
   position: number;
   mile_value: number;
   description: string;

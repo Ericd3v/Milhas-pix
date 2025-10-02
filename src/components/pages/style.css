@@ -6,7 +6,7 @@ html,
   margin: 0;
 }
 .page {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'DM Sans';
   color: #2E3D50;
   font-weight: 500;
   font-style: medium;
@@ -153,6 +153,21 @@ th, td {
   color: #1e90ff;
 }
 
+.btn-primary{
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 19px 10px 19px;
+  font-size: 14px;
+  font-weight: 600;
+  height: 2.6rem;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #00f7ff;
+}
 /* Conteúdo principal */
 .content {
   flex: 1;
@@ -270,3 +285,36 @@ span.one{
 .btn.primary:hover {
   background: #0079b9;
 }
+
+/* ======== STEP 2 ======== */
+.two-col {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+/* Inputs redondões */
+.form-vertical label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2e3d50;
+}
+
+.form-vertical input {
+  margin-top: 8px;
+  padding: 16px 20px;
+  border: 1px solid #d1d5db;
+  border-radius: 40px;
+  font-size: 16px;
+}
+
+.form-vertical input:focus {
+  outline: none;
+  border-color: #1e90ff;
+  box-shadow: 0 0 0 2px rgba(30,144,255,0.2);
+}
+
+/* Botões pill */
