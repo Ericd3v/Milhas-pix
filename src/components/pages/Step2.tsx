@@ -73,7 +73,7 @@ export default function Step2() {
     <div className="page">
       <section className="content two-col">
         <div className="card main">
-          <h2>02. Ofereça suas milhas</h2>
+          <h2><span className="one">02.</span> Ofereça suas milhas</h2>
 
           <form onSubmit={handleProceed} className="form-vertical">
             <label className="step2-label">

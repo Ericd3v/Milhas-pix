@@ -14,7 +14,7 @@ export default function Step3() {
     <div className="page">
       <section className="content">
         <div className="card">
-          <h2>03. Insira os dados do programa de fidelidade</h2>
+          <h2><span className="one"> 03.</span> Insira os dados do programa de fidelidade</h2>
           <form onSubmit={handleSubmit} className="form-grid" >
             <label >
               CPF do Titular

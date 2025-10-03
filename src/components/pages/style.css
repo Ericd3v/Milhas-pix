@@ -18,10 +18,7 @@ html,
 /* === ESTILOS OFFERS === */
 /* ===================== */
 
-span.one {
-  color: #1e90ff;
-  font-size: 18px;
-}
+
 
 .offers-actions {
   width: 100%;
@@ -169,20 +166,24 @@ span.one {
 /* Conteúdo principal */
 .content {
   flex: 1;
-  background: #fdfdfd;
+  background: #fff;
 }
 
 .content h2 {
-  font-size:30px;
-  margin-bottom: 20px;
+  font-family: "DM Sans";
+  font-weight: 600;
+  font-size:32px;
+  margin: 0 0 18px 24px;
+  text-align: left;
   text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.1);
 }
 
  h2 .one {
   font-family: "DM Sans";
   color: #1e90ff;
-  font-weight: 800;
-  margin-right: 5px;
+  font-weight: 600;
+  font-size:32px;
+  margin: 0 0 18px 24px;
   font-size: 36px;
   margin-bottom: 20px;
 }
@@ -271,7 +272,7 @@ span.one {
 .select-wrapper {
   position: relative;
   display: inline-block;
-  width: 100%; /* ou ajuste conforme necessário */
+  width: 100%;
 }
 
 .select-wrapper select {
@@ -279,8 +280,8 @@ span.one {
   -moz-appearance: none;
   appearance: none;
   width: 100%;
-  padding-right: 2rem; /* espaço para o ícone */
-  border-radius: 20px; /* mantém estilo arredondado */
+  padding-right: 2rem; 
+  border-radius: 20px; 
 }
 
 .select-wrapper .select-icon {
@@ -289,7 +290,7 @@ span.one {
   top: 37%;
   transform: translateY(-50%);
   pointer-events: none; /* não atrapalha clique */
-  color: #333; /* ajuste a cor do ícone */
+  color: #333; 
   font-size: 1.2rem; /* tamanho do ícone */
 }
 
@@ -398,9 +399,10 @@ span.one {
   grid-template-columns: 2fr 1fr;
   gap: 20px;
   padding: 30px;
+  border-radius: 48px;
   height: calc(100% - 70px);
-  background: #f9fafb;
-  box-decoration-break: 0 0 0 2px rgba(150, 202, 255, 0.418);
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgb(112, 107, 107);
 }
 
 .card {
@@ -411,6 +413,7 @@ span.one {
   height: 450px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
+
 
 /* Inputs */
 .form-vertical label {

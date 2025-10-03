@@ -4,6 +4,7 @@ import smiles from "../../assets/images/smiles.png";
 import portugal from "../../assets/images/portugal.png";
 import pass from "../../assets/images/pass.png";
 import { BsChevronExpand } from "react-icons/bs";
+import { AiFillUnlock } from "react-icons/ai";
 import "./style.css";
 export default function Step1() {
   const navigate = useNavigate();
@@ -37,22 +38,26 @@ return (
                 <option  value="liminar">Liminar</option>
                 <option  value="outro">Outro</option>
               </select>
-              <BsChevronExpand className="select-icon" />
+              <BsChevronExpand className="select-icon" style={{color:'##029DF7', boxShadow:'5px #029DF7'}} />
             </div>
           </label>
 
             <label>
               <h2>CPFs Disponíveis</h2>
-              <input className="step-ilimitado"
-                 type="text"
+              <div className="lok-wrapper">
+                <input
+                  className="step-ilimitado"
+                  type="text"
                   maxLength={11}
+                  placeholder="Ilimitado"
                   onInput={(e) => {
                     const input = e.target as HTMLInputElement;
                     input.value = input.value.replace(/\D/g, ""); // só números
                   }}
-              />
+                />
+                <AiFillUnlock className="input-icon" />
+              </div>
             </label>
-
             <div className="actions">
               <button type="submit" className="btn-primary">
                 Prosseguir →
