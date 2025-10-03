@@ -9,10 +9,10 @@ type SearchProps = {
 export function SearchBox({ placeholder = "Buscar...", onSearch }: SearchProps) {
   const [query, setQuery] = useState("");
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter") {
-      onSearch(query);
-    }
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setQuery(value);
+    onSearch(value);
   };
 
   return (
@@ -21,8 +21,7 @@ export function SearchBox({ placeholder = "Buscar...", onSearch }: SearchProps) 
         type="text"
         value={query}
         placeholder={placeholder}
-        onChange={(e) => setQuery(e.target.value)}
-        onKeyDown={handleKeyDown}
+        onChange={handleChange}
         style={{
           padding: "8px 16px",
           height: "52px",
@@ -36,4 +35,3 @@ export function SearchBox({ placeholder = "Buscar...", onSearch }: SearchProps) 
     </div>
   );
 }
-    

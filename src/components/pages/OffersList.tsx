@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import azul from "../../assets/images/azulincon.png";
 import smiles from "../../assets/images/smileicon.png";
-import { SearchBox } from "../SearchBox/SearchBox"; 
+import { SearchBox } from "../SearchBox/SearchBox";
 
 // Tipagem de cada oferta
 type Offer = {
@@ -27,6 +27,7 @@ export default function OffersList() {
   const [filtered, setFiltered] = useState<Offer[]>([]);
   const navigate = useNavigate();
   const [selectedFilter, setSelectedFilter] = useState("");
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
 
   function handleLogo(program: string) {
     switch (program) {
@@ -39,7 +40,7 @@ export default function OffersList() {
     }
   }
 
-  function handleColor(status: string) {
+  function handleColorStatus(status: string) {
     switch (status) {
       case "Ativa":
         return {
@@ -70,6 +71,22 @@ export default function OffersList() {
     }
   }
 
+  function handleColorText(program: string) {
+    switch (program) {
+      case "TudoAzul":
+        return {
+          color: "#40B6E6",          
+        };
+      case "Smiles":
+        return {
+          color: "#F57921",         
+        };
+      
+      default:
+        return { color: "black" };
+    }
+  }
+
   // Simula a chamada à API para buscar as ofertas
   useEffect(() => {
     fetch("/api/simulate-offers-list")
@@ -94,9 +111,20 @@ export default function OffersList() {
         setFiltered(fallback);
       });
   }, []);
+  // Verifica se é mobile
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+
+    window.addEventListener("resize", handleResize);
+
+
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+    }, [isMobile]);
 
   // Filtra as ofertas pelo campo de busca
- function handleSearch(query: string) {
+ function handleSearch(query: string) {    
   setSelectedFilter(""); // <-- reseta o select
 
   if (!query) {
@@ -134,9 +162,10 @@ export default function OffersList() {
   );
 }
 
-
-  return (
-    <div className="page-offers">
+ return (
+    <>
+    {!isMobile ?
+    (<div className="page-offers">
       <div className="offers-actions">
         <h2 className="offers-header">Minhas Ofertas</h2>
         <button className="btn-offers" onClick={() => navigate("/")}>
@@ -145,66 +174,87 @@ export default function OffersList() {
       </div>
 
       {/* Campo de busca alinhado acima da lista */}
-      <div className="search-offers">
-            <h2 className="offers-text">Todas ofertas</h2>
-        <div className="offers-filters">
-            <SearchBox placeholder="Login de acesso, ID da oferta..." onSearch={handleSearch}/>
-           <select 
-            className="offers-select" 
-            value={selectedFilter} 
-            onChange={(e) => handleFilter(e.target.value)}>
-            <option value="">Filtros</option>
-            <option value="Ativa">Ativa</option>
-            <option value="Inativo">Inativo</option>
-            <option value="Em Utilizacao">Em Utilização</option>
-            <option value="TudoAzul">Tudo Azul</option>
-            <option value="Smiles">Smiles</option>
-          </select>
+        <div className="container-general">
+            <div className="search-offers">
+                <h2 className="offers-text">Todas ofertas</h2>
+                <div className="offers-filters">
+                    <SearchBox placeholder="Login de acesso, ID da oferta..." onSearch={handleSearch}/>
+                <select 
+                    className="offers-select" 
+                    value={selectedFilter} 
+                    onChange={(e) => handleFilter(e.target.value)}>
+                    <option value="">Filtros</option>
+                    <option value="Ativa">Ativa</option>
+                    <option value="Inativo">Inativo</option>
+                    <option value="Em Utilizacao">Em Utilização</option>
+                    <option value="TudoAzul">Tudo Azul</option>
+                    <option value="Smiles">Smiles</option>
+                </select>
 
+                </div>
+            </div>
+
+            <table className="offers-table">
+                <thead>
+                <tr>
+                    <th>Programa</th>
+                    <th>Status</th>
+                    <th>Id da oferta</th>
+                    <th>Login</th>
+                    <th>Milhas ofertadas</th>
+                    <th>Data</th>
+                </tr>
+                </thead>
+                <tbody>
+                {filtered.map((o) => (
+                    <tr key={o.offerId}>
+                    <td>
+                        <div className="container-first-column">
+                            <div>
+                                <img
+                                src={handleLogo(o.loyaltyProgram)}
+                                alt={o.loyaltyProgram}                    
+                                />
+                            
+                                <p>
+                                <span style={handleColorText(o.loyaltyProgram)}>{o.loyaltyProgram}</span>
+                                {o.offerType}
+                                </p>
+                            </div>                                
+                        </div>
+                        
+                    </td>
+                    <td>
+                        <p
+                        className="status-offers"
+                        style={handleColorStatus(o.offerStatus)}
+                        >
+                        {o.offerStatus}
+                        </p>
+                    </td>
+                    <td>{o.offerId}</td>
+                    <td>{o.accountLogin}</td>
+                    <td>{o.availableQuantity.toLocaleString("pt-BR") }</td>
+                    <td>{new Date(o.createdAt).toLocaleString("pt-BR", {
+                        day: '2-digit',
+                        month:'short',
+                        year:'numeric'
+                    })}</td>
+                    </tr>
+                ))}
+                </tbody>
+            </table>
+            {filtered.length == 0 && (
+                <div>
+                    <p>Nenhum dado encontrado</p>
+                </div>
+            )}
         </div>
-      </div>
-
-      <table className="offers-table">
-        <thead>
-          <tr className="header-table">
-            <th>Programa</th>
-            <th>Status</th>
-            <th>Id da oferta</th>
-            <th>Login</th>
-            <th>Milhas ofertadas</th>
-            <th>Data</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filtered.map((o) => (
-            <tr key={o.offerId}>
-              <td>
-                <img
-                  src={handleLogo(o.loyaltyProgram)}
-                  alt={o.loyaltyProgram}
-                  style={{ width: "24px", marginRight: "8px" }}
-                />
-                <span>
-                  <p>{o.loyaltyProgram}</p>
-                  {o.offerType}
-                </span>
-              </td>
-              <td>
-                <p
-                  className="status-offers"
-                  style={handleColor(o.offerStatus)}
-                >
-                  {o.offerStatus}
-                </p>
-              </td>
-              <td>{o.offerId}</td>
-              <td>{o.accountLogin}</td>
-              <td>{o.availableQuantity * 1000}</td>
-              <td>{new Date(o.createdAt).toLocaleString()}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
-}
+    </div>)
+         : (
+            <div style={{width: '100%',display: 'flex', justifyContent:'center', alignItems:'center', color:'red' }}>
+                <p>NOVO COMPONENTE </p>
+            </div>
+         )}
+    </>
+  );}

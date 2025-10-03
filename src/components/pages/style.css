@@ -2,6 +2,7 @@
 body,
 html,
 #root {
+  width: 100%;
   height: 100%;
   margin: 0;
 }
@@ -29,8 +30,8 @@ span.one {
 }
 
 .page-offers {
-  display: flex;
-  flex-direction: column;
+  margin: 0 auto;
+  width: 170vh
 }
 
 .btn-offers {
@@ -46,9 +47,10 @@ span.one {
 }
 
 .offers-header {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 500;
   color: #6b7280;
+  margin-left: 10px;
 }
 
 .status-offers {
@@ -60,15 +62,10 @@ span.one {
   height: 60px;
 }
 
-th, td {
-  width: 118px;
-  height: 118px;
-}
-
 .search-offers {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 40px;
+  display: flex;  
+  justify-content: space-between; 
+  margin: 20px 40px; 
 }
 
 .offers-filters {
@@ -167,6 +164,7 @@ th, td {
 
 .btn-primary:hover {
   background-color: #00f7ff;
+
 }
 /* Conteúdo principal */
 .content {
@@ -177,6 +175,7 @@ th, td {
 .content h2 {
   font-size:30px;
   margin-bottom: 20px;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.1);
 }
 
  h2 .one {
@@ -209,11 +208,15 @@ th, td {
 
 .programs button {
   border: 1px solid #e5e7eb;
-  border-radius: 8px;
+  border-radius: 40px; 
   background: #fff;
-  padding: 10px 15px;
+  width: 150px; 
+  height: 70px;  
   cursor: pointer;
   transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center
 }
 
 .programs button:hover {
@@ -223,9 +226,10 @@ th, td {
 }
 
 .programs img {
-  display: inline-block;
-  margin-bottom: 90px;
-  width:40%;
+
+  max-width: 80%; 
+  max-height: 100%; 
+  object-fit: contain; 
  
 }
 
@@ -239,8 +243,7 @@ th, td {
 }
 #btn-programs:focus {
   border-color: #1e90ff;
- 
-  
+   
 }
 
 /* Form */
@@ -257,6 +260,37 @@ th, td {
   font-weight: 600;
   color: #609af7;
   flex: 1;
+}
+
+.select-label{
+  appearance: none;
+  position: relative;
+  display: inline-block;
+}
+
+.select-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%; /* ou ajuste conforme necessário */
+}
+
+.select-wrapper select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  padding-right: 2rem; /* espaço para o ícone */
+  border-radius: 20px; /* mantém estilo arredondado */
+}
+
+.select-wrapper .select-icon {
+  position: absolute;
+  right: 12px; /* distância da borda */
+  top: 37%;
+  transform: translateY(-50%);
+  pointer-events: none; /* não atrapalha clique */
+  color: #333; /* ajuste a cor do ícone */
+  font-size: 1.2rem; /* tamanho do ícone */
 }
 
 
@@ -336,18 +370,26 @@ th, td {
 
 /* Header */
 .topbar {
+  width: 100%;
+  height: 72px;
+   padding:  24px;
+  background: #1e90ff;
+  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 24px;
-  background: #1e90ff;
-  color: white;
-  font-weight: 600;
 }
-.saldo {
-  background: rgba(255,255,255,0.2);
-  padding: 6px 12px;
-  border-radius: 20px;
+
+.topbar img {
+  width: 100%;
+  height: 80%;
+}
+.balance {
+  font-size: 14px;
+  background: #ffffff33;
+  padding: 10px;
+  border-radius: 50px;
+  border: solid 1px white;
 }
 
 /* Layout principal */
@@ -364,9 +406,9 @@ th, td {
 .card {
   background: #fff;
   border: 1px solid #e5e7eb;
-  border-radius: 12px;
+  border-radius: 20px;
   padding: 24px;
-  height: 500px;
+  height: 450px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
@@ -449,8 +491,56 @@ th, td {
   cursor: pointer;
   font-weight: 600;
 }
-.btn.primary {
-  background: #1e90ff;
-  color: white;
+
+
+/* Centraliza horizontal e verticalmente todos os th e td da tabela */
+.offers-table th,
+.offers-table td {
+  text-align: center;        
+  vertical-align: middle;   
 }
 
+.offers-table th {
+  padding: 1rem;  
+  border-bottom: 1px solid #D9D9D9; 
+  border-top: 1px solid #D9D9D9; 
+  /* background-color: #f0f0f0; */
+}
+
+
+.container-first-column{    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-first-column div{
+    width: 55%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+}
+.container-first-column img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.container-first-column span {
+    font-family: 'Plus Jakarta Sans';
+    font-size: 18px;
+    font-weight: 700;
+}
+.container-first-column p {
+    display: flex;
+    flex-direction: column;    
+    font-family: 'Plus Jakarta Sans';
+    font-size: 12px;
+    font-weight: 500;
+    text-align: start;
+}
+
+.container-general{
+    border: 1px solid #D9D9D9;
+    border-radius: 16px;
+}

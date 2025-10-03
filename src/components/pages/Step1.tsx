@@ -3,6 +3,7 @@ import azul from "../../assets/images/azul.png";
 import smiles from "../../assets/images/smiles.png";
 import portugal from "../../assets/images/portugal.png";
 import pass from "../../assets/images/pass.png";
+import { BsChevronExpand } from "react-icons/bs";
 import "./style.css";
 export default function Step1() {
   const navigate = useNavigate();
@@ -29,17 +30,27 @@ return (
               navigate("/step-2");
             }}
           >
-            <label>
-              <h2>Produto</h2>
-              <select defaultValue="liminar" >
-                <option value="liminar">Liminar</option>
-                <option value="outro">Outro</option>
+          <label>
+            <h2>Produto</h2>
+            <div className="select-wrapper">
+              <select className="select-label" defaultValue="liminar">
+                <option  value="liminar">Liminar</option>
+                <option  value="outro">Outro</option>
               </select>
-            </label>
+              <BsChevronExpand className="select-icon" />
+            </div>
+          </label>
 
             <label>
               <h2>CPFs Disponíveis</h2>
-              <input className="step-ilimitado" placeholder="Ilimitado" type="number" required />
+              <input className="step-ilimitado"
+                 type="text"
+                  maxLength={11}
+                  onInput={(e) => {
+                    const input = e.target as HTMLInputElement;
+                    input.value = input.value.replace(/\D/g, ""); // só números
+                  }}
+              />
             </label>
 
             <div className="actions">
