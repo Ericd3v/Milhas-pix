@@ -10,7 +10,13 @@ export default function Step1() {
   const navigate = useNavigate();
 
 return (
+
     <div className="page">
+
+        <div className="card" style={{height:'30px', width:'45px,', padding:'76px'}}>
+              <h3 style={{fontSize:'14px'}}>Selecione o programa</h3>
+              <p style={{fontSize:'10px'}}>Escolha de qual programa de fidelidade você quer vender suas milhas. Use apenas contas em seu nome.</p>
+          </div>
 
       {/* Conteúdo principal */}
       <section className="content">
@@ -23,7 +29,6 @@ return (
             <button id="btn-programs"><img src={pass} alt="Latam Pass" /></button>
             <button id="btn-programs"><img src={portugal} alt="TAP" /></button>
           </div>
-
           <form
             className="form-row"
             onSubmit={(e) => {
@@ -44,7 +49,7 @@ return (
 
             <label>
               <h2>CPFs Disponíveis</h2>
-              <div className="lok-wrapper">
+              <div className="icon-wrapper">
                 <input
                   className="step-ilimitado"
                   type="text"
@@ -55,7 +60,7 @@ return (
                     input.value = input.value.replace(/\D/g, ""); // só números
                   }}
                 />
-                <AiFillUnlock className="input-icon" />
+                <AiFillUnlock className="lok-icon"/>
               </div>
             </label>
             <div className="actions">
