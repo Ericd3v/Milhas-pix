@@ -17,10 +17,11 @@ export default function RankingList({ ranking }: { ranking: RankingItem[] }) {
           }
           
         >
-          <strong>#{r.position}</strong>{" "}
-          <span>
-            {r.description} — R$ {r.mile_value.toFixed(2)}
-          </span>
+           <strong style={{color:''}}>{r.position}º </strong>
+          <span>R$ {r.mile_value.toFixed(2)}</span>
+          {r.description.toLowerCase().includes("sua oferta") && (
+            <span className="ranking-tag">Você</span>
+          )}
         </li>
       ))}
     </>

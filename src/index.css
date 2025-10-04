@@ -6,7 +6,7 @@
 }
 * {
   box-sizing: border-box;
-  font-family: Inter, Arial, sans-serif;
+  font-family: "DM Sans", Inter, Arial, sans-serif;
 }
 
 .app-root {
@@ -69,22 +69,6 @@
 .form-vertical label {
   display: block;
   margin-bottom: 12px;
-}
-.pill-group {
-  display: flex;
-  gap: 8px;
-  margin-top: 8px;
-}
-.pill {
-  padding: 8px 12px;
-  border-radius: 20px;
-  border: 1px solid #ddd;
-  background: #fff;
-}
-.pill.active {
-  background: var(--blue);
-  color: white;
-  border-color: var(--blue);
 }
 
 .side {

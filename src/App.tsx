@@ -7,12 +7,15 @@ import OffersList from "./components/pages/OffersList";
 import StepsLayout from "./layouts/StepsLayout";
 import icon from "./assets/images/icon.png";
 import "./App.css";
+import MilesProvider from "./contexts/MillesProvider";
 
 export default function App() {
   return (
+    <MilesProvider>
+
     <div className="app-root">
       <header className="topbar">
-        <div className="logo"><img src={icon} alt="" /></div>
+        <div className="logo"><img src={icon} alt="logo Milhas Pix" /></div>
         <div className="balance">R$ 283,12</div>
       </header>
 
@@ -35,5 +38,6 @@ export default function App() {
         &copy; 2025 Milhas Pix. Todos os direitos reservados.
       </footer>
     </div>
+    </MilesProvider>
   );
 }

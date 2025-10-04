@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect, useContext } from "react";
 import { fetchRanking } from "../../services/api";
 import { formatCurrency, parseCurrencyToNumber } from "../../utils/currency";
 import useDebounce from "../../hooks/useDebounce";
@@ -7,9 +6,10 @@ import type { RankingItem } from "../../types";
 import RankingList from "../RankingList";
 import PillGroup from "../PillGroup";
 import "./style.css";
+import { MilesContext } from "../../contexts/MilesContext";
 
 export default function Step2() {
-  const navigate = useNavigate();
+  const{navigate} = useContext(MilesContext) 
 
   const [mileValue, setMileValue] = useState("");
   const [milhasOfertadas, setMilhasOfertadas] = useState("");
@@ -70,29 +70,32 @@ export default function Step2() {
   console.log("recebaAte", recebaAte);
 
   return (
-    <div className="page">
-      <section className="content two-col">
-        <div className="card main">
-          <h2><span className="one">02.</span> Ofereça suas milhas</h2>
-
+    <div className="page step2">
+    <section className="content">
+      <div className="two-col">
+        {/* Coluna Esquerda */}
+        <div className="card">
+          <div className="card-header">
+            <h2 className="text-step2">
+              <span className="one">02.</span> Oferte suas milhas
+            </h2>
+            <p className="card-step2" >Escolha entre R$ 14,00 e R$ 16,56</p>
+          </div>
           <form onSubmit={handleProceed} className="form-vertical">
             <label className="step2-label">
-             <h3>Quando deseja receber o pagamento?</h3>
+              <h3 className="text.label" style={{display:'flex', justifyContent:'space-between', margin:'15px', fontSize:'16px', fontWeight:'500', lineHeight:'130%'}}>Quando deseja receber o pagamento?</h3>
               <PillGroup
-                options={[
-                  "Imediato",
-                  "em 2 dias",
-                  "em 7 dias",
-                  "Depois do voo",
-                ]}
+                options={["Imediato", "Em 2 dias", "Em 7 dias", "Depois do voo"]}
                 selected={selectedOption}
                 onSelect={setSelectedOption}
               />
             </label>
 
+          <div className="label-input">
             <label>
-              Milhas ofertadas
-              <input required
+              <p>Milhas ofertadas</p>
+              <input
+                required
                 value={milhasOfertadas}
                 onChange={(e) =>
                   setMilhasOfertadas(e.target.value.replace(/\D/g, ""))
@@ -100,10 +103,10 @@ export default function Step2() {
                 placeholder="10.000"
               />
             </label>
-
             <label>
-              Valor a cada 1.000 milhas
-              <input required
+              <p>Valor a cada 1.000 milhas</p>
+              <input
+                required
                 value={mileValue}
                 onChange={handleChangeValue}
                 onBlur={handleBlurValue}
@@ -111,12 +114,7 @@ export default function Step2() {
                 placeholder="R$ 0,00"
               />
             </label>
-
-            <div className="receba-ate">
-              <strong>Receba até: </strong>
-              {formatCurrency(recebaAte)}
-            </div>
-
+          </div>
             <div className="form-actions">
               <button
                 type="button"
@@ -132,17 +130,23 @@ export default function Step2() {
           </form>
         </div>
 
+        {/* Coluna Direita */}
         <aside className="card side">
           <h3>Ranking das ofertas</h3>
           <ul className="ranking">
             {loading ? (
-              <li className="muted"></li>
+              <li className="muted">Carregando...</li>
             ) : (
               <RankingList ranking={ranking} />
             )}
           </ul>
+          <div className="receba-ate">
+            <strong>Receba até:</strong>{" "}
+            <span>{formatCurrency(recebaAte)}</span>
+          </div>
         </aside>
-      </section>
-    </div>
+      </div>
+    </section>
+  </div>
   );
 }
