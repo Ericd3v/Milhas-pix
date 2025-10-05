@@ -74,36 +74,18 @@
 .side {
   width: 260px;
 }
-.ranking {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.ranking li {
-  padding: 6px 0;
-  border-bottom: 1px dashed #eee;
-}
+
+
 .muted {
   color: var(--muted);
 }
-.btn {
-  padding: 8px 14px;
-  border-radius: 20px;
-  border: 1px solid #cfd8dd;
-  background: white;
-  cursor: pointer;
-}
+
 .btn.primary {
   background: var(--blue);
   color: white;
   border-color: var(--blue);
 }
-.form-actions {
-  display: flex;
-  gap: 10px;
-  justify-content: flex-end;
-  margin-top: 12px;
-}
+
 .form-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

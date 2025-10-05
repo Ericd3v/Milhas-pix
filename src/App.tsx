@@ -33,7 +33,6 @@ export default function App() {
           <Route path="/offers" element={<OffersList />} />
         </Routes>
       </main>
-
       <footer className="footer">
         &copy; 2025 Milhas Pix. Todos os direitos reservados.
       </footer>

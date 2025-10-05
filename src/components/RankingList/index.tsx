@@ -2,29 +2,39 @@ import type { RankingItem } from "../../types";
 
 export default function RankingList({ ranking }: { ranking: RankingItem[] }) {
   if (!ranking.length) {
-    return <li className="muted">Digite um valor para atualizar o ranking</li>;
+    return <li className="muted">Insira seu valor para atualizar o ranking</li>;
   }
+
+  const formatCurrency = (value: number | string): string => {
+    const numberValue = typeof value === "string" ? parseFloat(value) : value;
+
+    return new Intl.NumberFormat("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    }).format(numberValue);
+  };
 
   return (
     <>
-      {ranking.map((r) => (
-        <li
-          key={r.position}
-          className={
-            r.description.toLowerCase().includes("sua oferta")
-              ? "highlight"
-              : undefined
-          }
-          
-        >
-           <strong style={{color:''}}>{r.position}º </strong>
-          <span>R$ {r.mile_value.toFixed(2)}</span>
-          {r.description.toLowerCase().includes("sua oferta") && (
-            <span className="ranking-tag">Você</span>
-          )}
-        </li>
-      ))}
-    </>
-  );
-}
+      {ranking.map((rank) => {
+        const isHighlight  = rank.description
+          .toLowerCase()
+          .includes("essa será sua posição");
 
+        return (
+          <li 
+            key={rank.position}
+            className={isHighlight ? "highlight" : undefined}
+          >
+            <p >
+              <strong className="highlight" >{rank.position}º</strong>{" "}
+              <span>{formatCurrency(rank.mile_value)}</span>
+            </p>
+
+            {isHighlight && <span className="you" >Você</span>}
+          </li>
+        );
+      })}
+    </>
+  );
+}

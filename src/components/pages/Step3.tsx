@@ -26,7 +26,7 @@ export default function Step3() {
   };
 
   return (
-    <div className="page">
+    <div className="page step3">
       <section className="content">
         <div className="card">
           <h2>

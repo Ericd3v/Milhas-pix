@@ -9,14 +9,24 @@ import "./style.css";
 import { MilesContext } from "../../contexts/MilesContext";
 
 export default function Step1() {
-  const { cpf, navigate, setCpf, selectedProgram, setSelectedProgram } = useContext(MilesContext);
+  const { cpf, navigate, setCpf, selectedProgram, setSelectedProgram } =
+    useContext(MilesContext);
 
-  // Mapeia os programas e suas imagens
   const programImages: Record<string, string> = {
     azul,
     smiles,
     pass,
     portugal,
+  };
+
+  const handleProceed = () => {
+    // 🚨 Checkpoints 
+  if (!cpf || cpf.length !== 11) {
+      alert("Digite um CPF válido com 11 dígitos e selecione o programa de fidelidade.");
+      return;
+    }
+
+    navigate("/step-2");
   };
 
   return (
@@ -25,7 +35,7 @@ export default function Step1() {
         <div className="step-container">
           <div className="card">
             <div className="card-header">
-              <h2 className="text-step1">
+              <h2 className="text-step1" style={{width:'400px'}}>
                 <span className="one">01.</span> Escolha o programa de fidelidade
               </h2>
             </div>
@@ -34,8 +44,11 @@ export default function Step1() {
             <div className="programs">
               {Object.keys(programImages).map((key) => (
                 <button
+                  type="button"
                   key={key}
-                  className={`program-btn ${selectedProgram === key ? "active" : ""}`}
+                  className={`program-btn ${
+                    selectedProgram === key ? "active" : ""
+                  }`}
                   onClick={() => setSelectedProgram(key)}
                 >
                   <img src={programImages[key]} alt={key} />
@@ -44,13 +57,7 @@ export default function Step1() {
             </div>
 
             {/* Formulário */}
-            <form
-              className="form-row"
-              onSubmit={(e) => {
-                e.preventDefault();
-                navigate("/step-2");
-              }}
-            >
+            <form className="form-row" onSubmit={(e) => e.preventDefault()}>
               <label>
                 <h2>Produto</h2>
                 <div className="select-wrapper">
@@ -91,12 +98,13 @@ export default function Step1() {
           </div>
         </div>
 
+        {/* Botão fora do card */}
         <div className="actions-out">
           <button
             type="button"
             className="btn-primary"
-            onClick={() => navigate("/step-2")}
-            disabled={!selectedProgram} // só habilita se o usuário escolher um programa
+            onClick={handleProceed}
+            disabled={!selectedProgram}
           >
             Prosseguir →
           </button>

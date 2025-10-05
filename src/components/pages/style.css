@@ -170,6 +170,7 @@ h2 .one {
   border-radius: 12px;
   padding: 30px;
   width: 100%;
+  height: 346px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.342);
 }
 
@@ -337,6 +338,7 @@ h2 .one {
   background: #1e90ff;
   color: #fff;
   border: none;
+  margin-right: -36px;
   border-radius: 20px;
   padding: 10px 19px;
   font-size: 14px;
@@ -353,28 +355,49 @@ h2 .one {
   display: flex;
   justify-content: flex-end;
 }
-
-.btn.primary {
-  background: #1e90ff;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  padding: 10px 20px;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s ease;
+.form-actions {
+  display: flex;
+  justify-content: space-between; 
+  margin: 30px 70px 0 0; 
 }
 
-.btn.primary:hover {
-  background: #0079b9;
+.btn {
+  margin-left: 30px ;
+  width: 112px;
+  display: flex;
+  height: 40px;
+  align-items: center;
+  border-radius: 44px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #fff; 
+  color: #080808; 
+  border: 1px solid #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #1e90ff;
+  color: #fff;
+}
+
+.btn-primary {
+  background-color: #1e90ff;
+  color: white;
+  font-weight: 500;
+}
+
+.btn-primary:hover {
+  background-color: #00d9ff;
 }
 
 /* ===================== */
 /* === STEP 2        === */
 /* ===================== */
 
-.page.step2 {
+.page.step2 .step3 {
   font-family: "DM Sans", sans-serif;
   color: #2e3d50;
   font-size: 16px;
@@ -394,23 +417,152 @@ h2 .one {
   align-items: center;
 }
 
-.label-input{
+
+/* Ícone do avião à direita */
+.airplane-icon {
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #0284c7; 
+  width: 20px;
+  height: 20px;
+  pointer-events: none; /* impede que o ícone interfira na digitação */
+}
+
+/* Wrapper do input + ícone */
+.input-icon-wrapper {
+  position: relative;
+  width: 298px; 
   display: flex;
-  justify-content: space-around;
-  width: 100%;
+  align-items: center;
   
 }
+
+/* Input com espaço interno à esquerda */
+.input-with-icon {
+  padding-right: 80px;
+  color: #2e3d50;
+  box-sizing: border-box;
+  border: solid 1px rgba(220, 43, 43, 1) ;
+}
+
+.input-with-icon:focus {
+  border-color: #1e90ff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(30,144,255,0.2);
+}
+.dropdown-icon {
+  color: rgba(220, 43, 43, 1);
+  position: absolute;
+  right: 12px; 
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  pointer-events: none; 
+}
+
+/* Ícone “R$” dentro do campo */
+.real-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(245, 219, 219, 1);
+  color: rgba(220, 43, 43, 1);
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 80px;
+  padding: 8px 12px;
+  pointer-events: none; /* impede o bloqueio da digitação */
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Garante que nem o texto nem o fundo do “R$” capturem clique */
+.real-icon,
+.real-icon * {
+  pointer-events: none !important;
+}
+
+.label-input{
+  display: flex;
+  justify-content: space-between;
+  width: 608px;
+}
+
+/* Estilo do checkbox */
+.checkbox-container {
+  display: flex;
+  position: relative;
+}
+
+/* Esconde o checkbox original */
+.checkbox-container input[type="checkbox"] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+/* Estilo do fundo do slider */
+.checkbox-container .slider {
+  position:relative;
+  cursor: pointer;
+  background-color: #ccc;
+  width: 46px;
+  height: 25px;
+  margin: 10px;
+  border-radius:9999px;
+  padding: 15px;
+  transition: background-color 0.3s;
+}
+
+/* Estilo do círculo deslizante */
+.checkbox-container .slider::before {
+  content: " ";
+  position: absolute;
+  
+  left:4px;
+  top: 5px;
+  width:22px;
+  height: 22px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+/* Quando o checkbox está marcado */
+.checkbox-container input:checked + .slider {
+  background-color: #4caf50;
+}
+
+.checkbox-container input:checked + .slider::before {
+  transform: translateX(17px);
+}
+
+/* Estilo do texto ao lado do checkbox */
+.checkbox-container span {
+  margin-left: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
 
 /* Header */
 .topbar {
   width: 100%;
-  height: 72px;
-  padding: 24px;
+  height: 55px;
+  padding: 20px;
   background: #1e90ff;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: -19px;
 }
 
 .topbar img {
@@ -421,8 +573,8 @@ h2 .one {
 .balance {
   font-size: 14px;
   background: #ffffff33;
-  padding: 10px;
-  border-radius: 50px;
+  padding: 12px;
+  border-radius: 98px;
   border: 1px solid white;
 }
 
@@ -442,34 +594,48 @@ h2 .one {
   border-radius: 20px;
   padding: 24px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  height: 396px;
 }
 /* Card direito */
-.card.side {
+.card .side {
+  padding: 24px;
+  height: 480px;
+  width: 248px;
   flex: 1;
   background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 20px;
+  border: 1px solid #E2E2E2;
+  border-radius: 40px;
   padding: 20px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 /* Inputs Step 2 */
 .form-vertical label {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
   font-size: 14px;
   font-weight: 600;
+  margin-top: 10px;
 }
 
-.form-vertical input {
-  margin-top: 8px;
-  padding: 14px 18px;
-  border: 1px solid #ccc;
-  border-radius: 30px;
+label p {
+  color: #2E3D50;
   font-size: 16px;
+  line-height: 130%;
+  font-weight: 500;
+  height: 21px;
+  width: 125px;
+  display: table-row;
+
+}
+.form-vertical input {
+  margin: 8px;
+  width: 298px;
+  padding-left: 50px ;
+  border-radius: 44px;
+  font-size: 16px;
+  height: 44px;
   
 }
+
 
 .form-vertical input:focus {
   border-color: #1e90ff;
@@ -511,33 +677,136 @@ h2 .one {
 
 /* Ranking */
 
-.ranking li {
-  padding: 6px 10px;
-  border-radius: 6px;
+.ranking {
   list-style: none;
+  margin: 0;
   padding: 0;
-  font-size: 14px;
-  margin: 12px 0;
+  list-style: none;
+  
+  display: flex;
+  padding: px;
+  width: 240px;
+  height: 298px;
+  flex-direction: column;
+  
 }
 
-.ranking li.meu-valor {
-  background: #e0f2fe;
-  color: #0284c7;
-  font-weight: 700;
-}
-
-/* Receba até */
-.receba-ate {
-  margin-top: 20px;
+.ranking li {
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  border-bottom: 1px solid #e5e7eb;
+  
   font-size: 16px;
-  text-align: right;
+  color: #4b5563;
+}
+
+
+.ranking li .position {
+  font-weight: 700; 
+  color: #1e3a8a; 
+}
+
+.ranking li .value {
+  font-weight: 500;
+  color: #0284c7; 
+}
+
+/* Ajustes para a classe "Você" */
+.ranking li .you {
+  background-color: #d1fae5;
+  border-radius: 40px;
+  padding: 5px 15px;
+  font-weight: 700;
+  color: #10b981;
+  display: inline-block; 
+  margin-left: 8px;
+}
+li strong{
+  color: #1E90FF
+ 
+}
+h2 {
+  color: #2E3D50;
+  font-size: 16px;
+  line-height: 28px;
+  align-items: center;
+  width: 248px;
+  height: 23px;
+}
+.ranking li .position,
+.ranking li .value,
+.ranking li .you {
+  font-size: 16px;
+  display: inline-block; /* Colocando todos os itens (posição, valor, "Você") lado a lado */
+}
+
+.ranking li:last-child {
+  border-bottom: none;
+}
+
+.ranking li .position,
+.ranking li .value {
+  margin-right: 8px; 
+}
+
+/* Estilo para "Receba até" */
+.receba-ate {
+  width: 230px;
+  height: 55px;
+  font-size: 28px;
+  text-align: left;
+  margin: 5px;  /* Adicionando mais espaço para deslocar para baixo */
+  background-color: #d1fae5;
+  border-radius: 8px;
+  padding: 12px 19px ;
+  font-weight: 700;
+  color: #10b981;
 }
 
 .receba-ate span {
-  color: #1e90ff;
+  color: #10b981;
   font-weight: 700;
   margin-left: 8px;
 }
+ 
+
+/* card-row  */
+
+.card-row {
+  width: 236px;
+  padding: 12px;
+  height: 120px;
+  background: #ffffff;
+  border: 1px solid #d9d9d9;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 14px;
+}
+
+.card-row h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2e3d50;
+  margin: 5px  3px 2px 0;
+}
+
+.card-row p {
+  font-size: 12px;
+  font-weight: 500;
+  color: #6b7280;
+  line-height: 1.4;
+  margin: 6px  3px 7px 0;
+}
+
+/* ===================== */
+/* === STEP 3          === */
+/* ===================== */
+
+
+
 
 /* ===================== */
 /* === TABLE          === */
@@ -606,11 +875,11 @@ h2 .one {
   gap: 24px;
 }
 
-/* Card de instrução (direita) */
+/* Card de instrução (direita) step 1*/
 .card-icon {
-  width: 24%;
-  padding: 10px;
-  height: 110px;
+  width: 236px;
+  padding: 12px;
+  height: 120px;
   background: #ffffff;
   border: 1px solid #d9d9d9;
   border-radius: 12px;
@@ -621,7 +890,7 @@ h2 .one {
   font-size: 14px;
   font-weight: 600;
   color: #2e3d50;
-  margin: 5px  3px 2px 0;
+  margin: 7px  3px 2px 0;
 }
 
 .card-icon p {
@@ -629,7 +898,7 @@ h2 .one {
   font-weight: 500;
   color: #6b7280;
   line-height: 1.4;
-  margin: 6px  3px 7px 0;
+  margin: 2px  3px 7px 0;
 }
 
 /* Linha abaixo do título dentro do card */
