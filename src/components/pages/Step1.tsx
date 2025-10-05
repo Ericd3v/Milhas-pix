@@ -21,12 +21,21 @@ export default function Step1() {
 
   const handleProceed = () => {
     // 🚨 Checkpoints 
-  if (!cpf || cpf.length !== 11) {
+    if (!cpf || cpf.length !== 14) { // Verifica se o CPF tem 14 caracteres (incluindo a formatação)
       alert("Digite um CPF válido com 11 dígitos e selecione o programa de fidelidade.");
       return;
     }
 
     navigate("/step-2");
+  };
+
+  // Função para formatar o CPF conforme o usuário digita
+  const formatCpf = (value: string) => {
+    const cpf = value.replace(/\D/g, ""); // Remove todos os caracteres não numéricos
+    if (cpf.length <= 3) return cpf;
+    if (cpf.length <= 6) return `${cpf.slice(0, 3)}.${cpf.slice(3)}`;
+    if (cpf.length <= 9) return `${cpf.slice(0, 3)}.${cpf.slice(3, 6)}.${cpf.slice(6)}`;
+    return `${cpf.slice(0, 3)}.${cpf.slice(3, 6)}.${cpf.slice(6, 9)}-${cpf.slice(9, 11)}`;
   };
 
   return (
@@ -46,9 +55,7 @@ export default function Step1() {
                 <button
                   type="button"
                   key={key}
-                  className={`program-btn ${
-                    selectedProgram === key ? "active" : ""
-                  }`}
+                  className={`program-btn ${selectedProgram === key ? "active" : ""}`}
                   onClick={() => setSelectedProgram(key)}
                 >
                   <img src={programImages[key]} alt={key} />
@@ -75,12 +82,12 @@ export default function Step1() {
                   <input
                     className="step-ilimitado"
                     type="text"
-                    maxLength={11}
+                    maxLength={14} // Limita o comprimento do CPF formatado
                     value={cpf || ""}
                     placeholder="Ilimitado"
                     onChange={(e) => {
-                      const input = e.target.value.replace(/\D/g, "");
-                      setCpf(input);
+                      const formattedCpf = formatCpf(e.target.value);
+                      setCpf(formattedCpf); // Atualiza o estado do CPF formatado
                     }}
                   />
                   <AiFillUnlock className="lok-icon" />

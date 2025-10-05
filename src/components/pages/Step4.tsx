@@ -19,7 +19,7 @@ export default function Step4() {
     <div className="page">
       <section className="content">
         <div className="card success">
-          <h2>Ordem de venda criada com sucesso!</h2>
+          <h2><span>4.</span>Ordem de venda criada com sucesso!</h2>
 
           <p>
             Agora é só aguardar — assim que suas milhas forem vendidas, o valor
