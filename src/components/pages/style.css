@@ -490,7 +490,7 @@ h2 .one {
 
 .label-input{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
 }
 
@@ -498,6 +498,14 @@ h2 .one {
 .checkbox-container {
   display: flex;
   position: relative;
+}
+
+.container{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 /* Esconde o checkbox original */
@@ -649,12 +657,7 @@ label p {
 
 /* Pills */
 
-.pill-group {
-  display: flex;
-  gap: 12px;
-  margin-top: 8px;
-  
-}
+
 .pill {
   padding: 18px 24px;
   width: 24%;
@@ -670,6 +673,8 @@ label p {
   background: var(--blue);
   color: white;
   border-color: var(--blue);
+  
+  
 }
 
 .step2-label {
@@ -683,28 +688,29 @@ label p {
 
 .ranking {
   list-style: none;
-  margin: 0;
-  padding: 0;
+  margin: 276px;
+  height: 52px;
+  padding: 56px;
   list-style: none;
-  
   display: flex;
-  padding: px;
-  width: 240px;
-  height: 298px;
-  flex-direction: column;
+  justify-content: space-around;
+  flex-direction: row;
+  
   
 }
 
 .ranking li {
-  
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px 16px;
-  border-bottom: 1px solid #e5e7eb;
-  
-  font-size: 16px;
-  color: #4b5563;
+  display: inline-flex;           /* Horizontal, permite centralizar conteúdo */
+  align-items: center;            /* Alinha verticalmente o conteúdo */
+  justify-content: center;        /* Centraliza horizontalmente o conteúdo */
+  width: 80px;                    /* Largura */
+  height: 30px;                   /* Altura fixa */
+  border-radius: 50px;            /* Bordas arredondadas */
+  border: 1px solid #ccc;         /* Borda 1px (cor genérica, pode trocar) */
+  font-size: 12px;                 /* Tamanho de fonte sugerido */
+  cursor: pointer;                /* Indica que é clicável */
+  background-color: white;        /* Cor de fundo padrão */
+  transition: background-color 0.2s, color 0.2s 3;
 }
 
 
@@ -720,14 +726,16 @@ label p {
 
 /* Ajustes para a classe "Você" */
 .ranking li .you {
+  width: 100%;
   background-color: #d1fae5;
-  border-radius: 40px;
-  padding: 5px 15px;
+  border-radius: 200px;
   font-weight: 700;
   color: #10b981;
   display: inline-block; 
-  margin-left: 8px;
-}
+  margin-left: -10px;
+  font-size: 10px;
+  }
+
 li strong{
   color: #1E90FF
  
@@ -736,12 +744,16 @@ li strong{
 .ranking li .position,
 .ranking li .value,
 .ranking li .you {
-  font-size: 16px;
+  
+  font-size: 12px;
   display: inline-block; /* Colocando todos os itens (posição, valor, "Você") lado a lado */
 }
 
 .ranking li:last-child {
-  border-bottom: none;
+  background-color: #d1fae5;
+  color: #1E90FF;
+  padding: 10px;
+  justify-content: center;
 }
 
 .ranking li .position,
@@ -949,7 +961,6 @@ li strong{
 
 
 
-
 /* ===================== */
 /* === TABLE          === */
 /* ===================== */
@@ -1094,262 +1105,317 @@ li strong{
 }
 
 
-/* ====================================================== */
-/* === TABLETS E CELULARES (RESPONSIVO) */
-/* ====================================================== */
 
 
 
-/* ====================================================== */
-/* STEP 1*/
-/* ====================================================== */
+/* ============================= */
+/*   CARD PRINCIPAL (MOBILE)     */
+/* ============================= */
 
+/* ============================= */
+/*   HEADER                      */
+header-mobile
+/* ============================= */
+.content-mobile{ 
+  width: 340px;
+  height: 465px;
+  padding: 16px 16px 12px;
 
-/*HEARDER CARD & CARD*/
-
+}
 .card-mobile{
-  flex-direction:column;
-  display: inline-block;
-  width: 320px;
-  height: 400px;
-  border: 1px solid #E2E2E2;
-  margin: 32px;
-  background: #fff;
-  border-radius: 8px;
-  margin: 12px;
+    flex-direction: column;
+    border-radius: 8px;
+    width: 308px;
+    height: 290px;
+    margin: 32px;
+    border: solid 1px #E2E2E2 ;
+
+}
+.select-icon-mobile{
+  color: #00478f;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  margin: 0 0 0 -9px;
 }
 
+
+
 .header-mobile {
-  flex-direction: column;
   width: 308px;
   height: 52px;
   border-bottom: 1px solid #E2E2E2;
-  padding-bottom: 12px;
-  margin: 8px;
-}
-.select-mobile{
-  flex-direction: row;
-  width: 276px;
-  height: 44px;
-  border-radius: 44px;
-  display: flex;
-  justify-content: space-between;
-  border: solid 1px #E2E2E2;
-  padding: 10px 16px 10px 16px;
+  padding: 12px;
 }
 
-
-.lok-icon-mobile{
-  position: relative;
-  transform: translateY(-150%); 
-  margin-left:220px ;
-  width: 20px;
-  height: 20px;
-  color:#8F8F8F ;
-  pointer-events: none;
-}
-
-.text-step1-mobile{
-  width: 247px;
+.text-step-mobile {
+  width:247px ;
   height: 28px;
+  font-size: 12px;
   font-weight: 500;
-  font-style: medium;
-  font-size: 16px;
-  line-height: 28px;
-}
- 
-
-
-/* SELECT / INPUTS*/
-
-.programs-mobile {
-  display: flex;
-  align-items: center;
-  justify-content: space-between; 
-  width: 276px;
-  height: 44px;
-  padding: 10px 16px 10px 16px;
-  border: 1px solid #E2E2E2;
-  border-radius: 44px;
-  gap: 8px;
   color: #2E3D50;
-  font-weight: 500;
-  font-size: 14px;
-  margin: 11px;
   
 }
 
-.select-icon-mobile{
-  position: relative;
-  transform: translateY(-220%); 
-  margin-left:245px ;
-  width: 22px;
-  height: 15px;
-  color:#029DF7 ;
-  pointer-events: none;
-  align-items: center;
-  right: 6.75px;
+.one-mobile {
+  color: #0280ff;
+  font-weight: 600;
+  margin-right: 4px;
 }
-
-
-.option-mobile{
-  appearance: none;
-
-}
-
-
-.program-select-mobile,
-.program-selecte-mobile{
-  flex: 1;
-  all: unset;              /* zera TUDO (borda, padding, cor, fonte, etc.)*/
-  background: none;
-  border: none;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  cursor: pointer;
-  text-align: start;
-  text-transform: capitalize;
-}
-
-
-
-.refresh-icon {
-  flex-shrink: 0; /* impede o ícone de encolher */
-  width: 20px;
-  height: 20px;
-  color: #00d9ff;
-  
-}
-
-.programs-mobile img  {
-  width: 43px;
-  height: 26px;
-}
-
-/* FORM & INPUTS STEP 1*/
-
-.form-row-mobile{
-  flex-direction: row;
-  width: 308px;
-  height: 234px;
-  padding: 12px 16px 16px 16px;
-  border-radius: 8px;
-  
-
-}
-
-/* TEXTOS E PARAGRAGOS*/
-
-.text-step-mobile{
-  font-family: "DM Sans";
-  width: 257px;
-  height: 28px;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 28px;
-  color:#2E3D50 ;
-}
-.header-mobile > .one-mobile{
-  font-family: "DM Sans";
-  width: 29px;
-  height: 28px;
-  font-weight: 500;
-  align-items: center;
-  text-align: center;
-  color: #1E90FF;
-  
-}
-.text-mobile{
+.text-mobile{ 
   width: 61px;
   height: 21px;
-  font-weight: 500;
   font-size: 16px;
+  font-weight: 500;
   color: #2E3D50;
+  margin: 8px;
 }
-.text-mobile-2{
+
+
+
+.text-mobile2{
     width: 131px;
-  height: 21px;
+      height: 21px;
+      font-size: 16px;
+      font-weight: 500;
+      color: #2E3D50;
+      margin: 8px;
+
+}
+/* ============================= */
+/*   BOTÕES DE OPÇÃO (PILL)      */
+/* ============================= */
+
+.button-group button {
+  flex: 1;
+  min-width: 120px;
+  padding: 8px 12px;
+  border: 1px solid #E2E2E2;
+  border-radius: 44px;
+  font-size: 14px;
   font-weight: 500;
+  color: #2E3D50;
+  background: #fff;
+  cursor: pointer;
+}
+
+.button-group button.active {
+  background: #029DF7;
+  color: #fff;
+  border: 1px solid #029DF7;
+}
+
+/* ============================= */
+/*   INPUTS / CAMPOS             */
+/* ============================= */
+.input-group {
+  margin-bottom: 16px;
+}
+
+.input-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #2E3D50;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #E2E2E2;
+  border-radius: 44px;
+  padding: 10px 14px;
+  background: #fff;
   font-size: 16px;
+}
+
+.input-wrapper input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: transparent;
   color: #2E3D50;
 }
 
-/* INPUTS E CARDS RODAPE*/
-
-.mobile-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.input-wrapper .icon {
+  margin-left: 8px;
+  color: #8F8F8F;
 }
 
-/* Caixa principal */
-.space-mobile {
+.error-text {
+  font-size: 12px;
+  color: #DC2B2B;
+  margin-top: 4px;
+}
+
+/* ============================= */
+/*   RANKING                     */
+/* ============================= */
+.ranking {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.rank-item {
+  padding: 6px 12px;
+  border: 1px solid #E2E2E2;
+  border-radius: 44px;
+  font-size: 13px;
+  background: #fff;
+}
+
+.rank-item.user {
+  border: 1px solid #25A25A;
+  background: #F0FFF5;
+  color: #25A25A;
+}
+
+/* ============================= */
+/*   CHECKBOX TOGGLE             */
+/* ============================= */
+.checkbox-container-mobile {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 300px;
-  height: 45px;
-  padding: 10px 16px;
-  margin: 8px auto;
+  gap: 12px;
+  font-family: sans-serif;
+}
+
+/* Estrutura do switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 24px;
+  right: 20px;
+}
+
+/* Esconde o checkbox padrão */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Base do slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 34px;
+  transition: background-color 0.3s;
+}
+
+
+/* Botão circular */
+.slider::before {
+  content: "  ";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  right: 25px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+/* Quando ativado */
+.switch input:checked + .slider {
+  background-color: #4caf50;
+}
+
+/* Desliza o botão */
+.switch input:checked + .slider::before {
+  transform: translateX(22px);
+}
+
+/* (Opcional) Efeito de foco */
+.switch input:focus + .slider {
+  box-shadow: 0 0 1px #4caf50;
+}
+
+.label-text {
+  font-size: 0.95rem;
+  color: #222;
+}
+
+/* ============================= */
+/*   CARD MÉDIA                  */
+/* ============================= */
+.media-card {
+  padding: 12px;
   border: 1px solid #E2E2E2;
   border-radius: 8px;
-  color: #2E3D50;
-  font-weight: 500;
+  background: #F9FFF9;
+  margin-bottom: 16px;
   font-size: 14px;
-  position: relative;
-  background-color: #fff;
-  transition: border 0.3s ease;
+}
+
+.media-card .green {
+  color: #25A25A;
+  font-weight: 600;
+}
+
+.media-card .muted {
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* ============================= */
+/*   CARD EXPANDÍVEL ("Média")   */
+/* ============================= */
+.space-mobile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+  padding: 12px 16px;
+  border: 1px solid #E2E2E2;
+  border-radius: 8px;
+  margin: 8px auto;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
 }
 
 .space-mobile:hover {
   border-color: #029df7;
 }
 
-/* Select */
-.program-selecte-mobile {
-  width: 100%;
-  font-size: 15px;
-  color: #2E3D50;
-  border: none;
-  background: transparent;
-  outline: none;
-  appearance: none;
-  cursor: pointer;
-}
-
-/* Ícone de + / - */
 .plus {
-  position: absolute;
-  right: 16px;
   width: 20px;
   height: 20px;
   color: #029DF7;
-  pointer-events: none;
 }
 
-/* Card deslizante */
 .card-icon-mobile {
   width: 300px;
   border: 1px solid #E2E2E2;
   border-radius: 8px;
-  background-color: #fff;
-  color: #2E3D50;
+  background: #fff;
   overflow: hidden;
   max-height: 0;
   opacity: 0;
-  transition: all 0.4s ease;
+  transition: all 0.3s ease;
   margin: 0 auto;
 }
 
 .card-icon-mobile.show {
   padding: 12px 16px;
-  opacity: 1;
   max-height: 200px;
+  opacity: 1;
   margin-top: 4px;
 }
 
-/* Título e texto */
 .h4-mobile {
   font-size: 15px;
   font-weight: 600;
@@ -1358,6 +1424,272 @@ li strong{
 
 .p-mobile {
   font-size: 13px;
-  line-height: 1.4;
   color: #5E6A7D;
+  line-height: 1.4;
 }
+
+/* ============================= */
+/*   RECEBA ATÉ                  */
+/* ============================= */
+.receba-ate {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border: 1px solid #E2E2E2;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 16px 0;
+}
+
+.receba-ate strong {
+  color: #029DF7;
+}
+
+/* ============================= */
+/*   FOOTER                      */
+/* ============================= */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #E2E2E2;
+  padding-top: 12px;
+}
+
+.footer span {
+  font-size: 14px;
+  color: #555;
+}
+
+.footer .btn-primary {
+  padding: 10px 20px;
+  background: #029DF7;
+  color: #fff;
+  border: none;
+  border-radius: 44px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+
+
+
+.ofertas-mobile2{
+  width: 276px;
+  height: 100px;
+ 
+  
+}
+
+.program-select-mobile2 input{
+  width: 276px;
+  height: 44px;
+  border-radius: 44px;
+  padding: 10px 14px 10px 16px;
+}
+
+
+
+.select-wrapper-mobile{
+  width: 276px;
+  height: 44px;
+  border-radius: 44px;
+  border: solid 1px #E2E2E2;
+  justify-content: space-between;
+  padding: 10px 16px 10px 16px;
+  margin: 11px;
+  appearance: none;
+   all: unset;
+
+}
+.programs-mobile{
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  width: 276px;
+  height: 44px;
+  padding: 10px 16px 10px 16px;
+  justify-content: space-between;
+  border: solid 1px #E2E2E2 ;
+  border-radius: 44px;
+  gap: 11px;
+  margin: 14px;
+}
+
+.mobile{
+  display: inline-flex;
+  width: 270px;
+  height: 44px;
+  border-radius: 44px;
+  appearance: none;
+  border: solid 1px #E2E2E2 ;
+  padding: 10px 16px 10px 16px;
+  
+
+}
+.program-select-mobile {
+  all: unset;               
+  display: block;           
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+  text-transform: capitalize;
+  color: #2E3D50;
+  text-align: start;
+}
+
+.select-icon-mobile{
+    position: relative;
+  top: 8px;
+  font-size: 30px;
+  transform: translateX(-140%);
+  color:#029DF7;
+}
+
+.lok-icon-mobile{
+  position: relative;
+  top: 8px;
+  font-size: 30px;
+  transform: translateX(-140%);
+  color:#8F8F8F ;
+}
+.refresh-icon{
+ width: 20px;
+  height: 20px;
+  color: #1E90FF;
+}
+.programs-mobile img{
+  width: 43px;
+  height: 36px;
+}
+
+
+.span-mobil{
+  padding-right: 80px;
+  box-sizing: border-box;
+  width: 30px;
+  height: 36px;
+  top: 38px;
+  display: flex;
+  position: relative;
+  font-size: 20px;
+  padding:4px;
+  transform: translateX(30%);
+  border-radius:44px;
+  background: rgba(245, 219, 219, 1);
+  color: rgba(220, 43, 43, 1);
+}
+
+
+.icon{
+  
+  position:relative; 
+  right: 24px;
+  bottom: 32px;
+  transform: translateX(700%);
+  font-size: 20px;
+  pointer-events: none;
+  color:#DC2B2B ;
+  pointer-events:none;
+  
+}
+.checkbox-container-mobile {
+  transform: translateX(-19px);
+ padding: 55px;
+ font-size: 16px;
+ width: 310px;
+ height: 42px;
+  color: #2E3D50;
+}
+
+.media-card{
+  width: 276px;
+  height: 44px;
+  border: solid 1px #EAEAEA;
+  padding: 16px 16px 10px 16px;
+  margin: 8px;
+  border-radius: 44px;
+}
+
+.media-p{
+  width: 276px;
+  height: 12px;
+  font-weight: 500;
+  font-size: 14px;
+  text-align: center;
+  display: flex;
+  transform: translateY(-19px);
+ 
+  
+}
+
+.milhas-mobile {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.step2-label-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.h3-mobil {
+  font-size: 16px;
+  font-weight: 500;
+  color: #2E3D50;
+  margin-bottom: 4px;
+}
+
+/* GRID 2x2 */
+.pil-group-mobile {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* duas colunas */
+  grid-auto-rows: minmax(40px, auto); /* altura uniforme */
+  gap: 10px; /* espaçamento entre linhas e colunas */
+  width: 100%;
+}
+
+/* estilo dos botões */
+.pil-group-mobile button {
+  border: 1px solid #E2E2E2;
+  border-radius: 44px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 0;
+  background: #fff;
+  color: #2E3D50;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+
+.pil-group-mobile button.active {
+  background: #029DF7;
+  color: #fff;
+  border-color: #029DF7;
+}
+
+.label-input-tex{
+  width: 125px;
+  height: 21px;
+  font-size: 16px;
+   font-weight: 500;
+  font-size: 16px;
+  color:#2E3D50 ;
+  left: 40px;
+}
+.label-input-text2{
+  width: 191px;
+  height: 21px;
+  font-size: 16px;
+  font-weight: 500;
+  font-size: 16px;
+  color:#2E3D50 ;
+ 
+}
+
