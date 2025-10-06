@@ -5,7 +5,7 @@ import type { NavigateFunction } from "react-router-dom";
 interface IMilhasProviderProps {
   cpf: string;
   setCpf: React.Dispatch<React.SetStateAction<string>>;
-  selectedProgram: string | null;
+  selectedProgram: string | number | readonly string[] | undefined;
   setSelectedProgram: React.Dispatch<React.SetStateAction<string | null>>;
   navigate: NavigateFunction;
 }

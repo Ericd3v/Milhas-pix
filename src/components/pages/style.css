@@ -131,6 +131,13 @@ html,
   font-size: 16px;
 }
 
+.label-text{
+  font-family: "DM Sans";
+  height: 21px;
+  font-weight: 500;
+  
+}
+
 .step.active,
 .step.active span {
   color: #1e90ff;
@@ -144,14 +151,13 @@ html,
   background: #fff;
 }
 
-.content h2 {
+.text-step{
+  width: 500px;
   font-family: "DM Sans", sans-serif;
-  color: rgb(46, 61, 80);
   font-weight: 500;
   font-size: 24px;
   margin: 0 0 12px 8px;
   text-align: left;
-  text-shadow: 3px 3px 3px rgba(46, 61, 80, 0.2);
 }
 
 h2 .one {
@@ -249,7 +255,6 @@ h2 .one {
 /* === FORM         === */
 /* ===================== */
 
-
 .form-row {
   display: flex;
   align-items: flex-end;
@@ -301,7 +306,7 @@ h2 .one {
   position: absolute;
   right: 12px;
   top: 37%;
-  transform: translateY(-94%);
+  transform: translateY(-96%);
   pointer-events: none;
   color: #059df5;
   font-size: 1.5rem;
@@ -429,6 +434,7 @@ h2 .one {
 .input-icon-wrapper {
   position: relative;
   width: 298px; 
+  height: 44px;
   display: flex;
   align-items: center;
   
@@ -485,7 +491,7 @@ h2 .one {
 .label-input{
   display: flex;
   justify-content: space-between;
-  width: 608px;
+  width: 100%;
 }
 
 /* Estilo do checkbox */
@@ -530,6 +536,10 @@ h2 .one {
 }
 
 /* Quando o checkbox está marcado */
+
+.checkbox-container{
+ width: 400px;
+}
 .checkbox-container input:checked + .slider {
   background-color: #4caf50;
 }
@@ -585,7 +595,7 @@ h2 .one {
 .card {
   flex: 2;
   background: #fff;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #E2E2E2;
   border-radius: 20px;
   padding: 24px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
@@ -630,7 +640,6 @@ label p {
   height: 44px;
   
 }
-
 
 .form-vertical input:focus {
   border-color: #1e90ff;
@@ -723,13 +732,7 @@ li strong{
   color: #1E90FF
  
 }
-h2 {
-  color: #2E3D50;
-  font-size: 16px;
-  line-height: 28px;
-  align-items: center;
-  height: 23px;
-}
+
 .ranking li .position,
 .ranking li .value,
 .ranking li .you {
@@ -906,7 +909,7 @@ h2 {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: 19px 70px 0 0; 
+  margin: 40px 70px 0 0; 
 }
 
 .btn {
@@ -944,77 +947,8 @@ h2 {
 }
 
 
-/* ===================== */
-/* === STEP 4          === */
-/* ===================== */
 
-.page.step4 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg, #e0f2ff 0%, #ffffff 100%);
-  min-height: 100vh;
-}
 
-.success-card {
-  text-align: center;
-  background: #ffffff;
-  border-radius: 24px;
-  padding: 60px 40px;
-  max-width: 600px;
-  margin: auto;
-  box-shadow: 0 8px 20px rgba(30, 144, 255, 0.15);
-  animation: fadeIn 0.8s ease-in-out;
-}
-
-.success-title {
-  font-size: 26px;
-  font-weight: 700;
-  color: #1e90ff;
-  margin-bottom: 20px;
-}
-
-.success-text {
-  font-size: 18px;
-  color: #374151;
-  line-height: 1.5;
-  margin-bottom: 40px;
-}
-
-.success-btn {
-  background-color: #1e90ff;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 600;
-  border: none;
-  border-radius: 40px;
-  padding: 14px 28px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.success-btn:hover {
-  background: #00cfff;
-}
-
-.lottie-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 30px;
-}
-
-/* animação de entrada */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 /* ===================== */
 /* === TABLE          === */
@@ -1157,4 +1091,273 @@ h2 {
   justify-content: space-between;
   align-items: flex-start;
   gap: 24px;
+}
+
+
+/* ====================================================== */
+/* === TABLETS E CELULARES (RESPONSIVO) */
+/* ====================================================== */
+
+
+
+/* ====================================================== */
+/* STEP 1*/
+/* ====================================================== */
+
+
+/*HEARDER CARD & CARD*/
+
+.card-mobile{
+  flex-direction:column;
+  display: inline-block;
+  width: 320px;
+  height: 400px;
+  border: 1px solid #E2E2E2;
+  margin: 32px;
+  background: #fff;
+  border-radius: 8px;
+  margin: 12px;
+}
+
+.header-mobile {
+  flex-direction: column;
+  width: 308px;
+  height: 52px;
+  border-bottom: 1px solid #E2E2E2;
+  padding-bottom: 12px;
+  margin: 8px;
+}
+.select-mobile{
+  flex-direction: row;
+  width: 276px;
+  height: 44px;
+  border-radius: 44px;
+  display: flex;
+  justify-content: space-between;
+  border: solid 1px #E2E2E2;
+  padding: 10px 16px 10px 16px;
+}
+
+
+.lok-icon-mobile{
+  position: relative;
+  transform: translateY(-150%); 
+  margin-left:220px ;
+  width: 20px;
+  height: 20px;
+  color:#8F8F8F ;
+  pointer-events: none;
+}
+
+.text-step1-mobile{
+  width: 247px;
+  height: 28px;
+  font-weight: 500;
+  font-style: medium;
+  font-size: 16px;
+  line-height: 28px;
+}
+ 
+
+
+/* SELECT / INPUTS*/
+
+.programs-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  width: 276px;
+  height: 44px;
+  padding: 10px 16px 10px 16px;
+  border: 1px solid #E2E2E2;
+  border-radius: 44px;
+  gap: 8px;
+  color: #2E3D50;
+  font-weight: 500;
+  font-size: 14px;
+  margin: 11px;
+  
+}
+
+.select-icon-mobile{
+  position: relative;
+  transform: translateY(-220%); 
+  margin-left:245px ;
+  width: 22px;
+  height: 15px;
+  color:#029DF7 ;
+  pointer-events: none;
+  align-items: center;
+  right: 6.75px;
+}
+
+
+.option-mobile{
+  appearance: none;
+
+}
+
+
+.program-select-mobile,
+.program-selecte-mobile{
+  flex: 1;
+  all: unset;              /* zera TUDO (borda, padding, cor, fonte, etc.)*/
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  text-align: start;
+  text-transform: capitalize;
+}
+
+
+
+.refresh-icon {
+  flex-shrink: 0; /* impede o ícone de encolher */
+  width: 20px;
+  height: 20px;
+  color: #00d9ff;
+  
+}
+
+.programs-mobile img  {
+  width: 43px;
+  height: 26px;
+}
+
+/* FORM & INPUTS STEP 1*/
+
+.form-row-mobile{
+  flex-direction: row;
+  width: 308px;
+  height: 234px;
+  padding: 12px 16px 16px 16px;
+  border-radius: 8px;
+  
+
+}
+
+/* TEXTOS E PARAGRAGOS*/
+
+.text-step-mobile{
+  font-family: "DM Sans";
+  width: 257px;
+  height: 28px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 28px;
+  color:#2E3D50 ;
+}
+.header-mobile > .one-mobile{
+  font-family: "DM Sans";
+  width: 29px;
+  height: 28px;
+  font-weight: 500;
+  align-items: center;
+  text-align: center;
+  color: #1E90FF;
+  
+}
+.text-mobile{
+  width: 61px;
+  height: 21px;
+  font-weight: 500;
+  font-size: 16px;
+  color: #2E3D50;
+}
+.text-mobile-2{
+    width: 131px;
+  height: 21px;
+  font-weight: 500;
+  font-size: 16px;
+  color: #2E3D50;
+}
+
+/* INPUTS E CARDS RODAPE*/
+
+.mobile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Caixa principal */
+.space-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 300px;
+  height: 45px;
+  padding: 10px 16px;
+  margin: 8px auto;
+  border: 1px solid #E2E2E2;
+  border-radius: 8px;
+  color: #2E3D50;
+  font-weight: 500;
+  font-size: 14px;
+  position: relative;
+  background-color: #fff;
+  transition: border 0.3s ease;
+}
+
+.space-mobile:hover {
+  border-color: #029df7;
+}
+
+/* Select */
+.program-selecte-mobile {
+  width: 100%;
+  font-size: 15px;
+  color: #2E3D50;
+  border: none;
+  background: transparent;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+/* Ícone de + / - */
+.plus {
+  position: absolute;
+  right: 16px;
+  width: 20px;
+  height: 20px;
+  color: #029DF7;
+  pointer-events: none;
+}
+
+/* Card deslizante */
+.card-icon-mobile {
+  width: 300px;
+  border: 1px solid #E2E2E2;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #2E3D50;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: all 0.4s ease;
+  margin: 0 auto;
+}
+
+.card-icon-mobile.show {
+  padding: 12px 16px;
+  opacity: 1;
+  max-height: 200px;
+  margin-top: 4px;
+}
+
+/* Título e texto */
+.h4-mobile {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.p-mobile {
+  font-size: 13px;
+  line-height: 1.4;
+  color: #5E6A7D;
 }

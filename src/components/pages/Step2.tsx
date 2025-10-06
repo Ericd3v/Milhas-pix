@@ -12,7 +12,7 @@ import { MilesContext } from "../../contexts/MilesContext";
 import React from 'react';
 
 
-export default function Step2() {
+export default function step2() {
   const { navigate } = useContext(MilesContext);
 
   const [mileValue, setMileValue] = useState<number | "">("");
@@ -80,7 +80,7 @@ export default function Step2() {
           {/* Coluna Esquerda */}
           <div className="card">
             <div className="card-header">
-              <h2 className="text-step2">
+              <h2 className="text-step">
                 <span className="one">02.</span> Oferte suas milhas
               </h2>
               <p className="card-step2">Escolha entre R$ 14,00 e R$ 16,56</p>
@@ -166,7 +166,7 @@ export default function Step2() {
                   ← Voltar
                 </button>
                 <button type="submit" className="btn-primary"
-                  onClick={() => navigate("/Step-3")}
+                  onClick={() => navigate("/step-3")}
 >
                   Prosseguir →
                 </button>
