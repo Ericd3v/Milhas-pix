@@ -11,7 +11,7 @@ import { FiRefreshCcw } from "react-icons/fi";
 import { LuPlus } from "react-icons/lu";
 
 export default function Step1() {
-  // ✅ CORREÇÃO 1: Hooks movidos para o nível superior do componente
+  
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [isOpen, setIsOpen] = useState(false); // State para o accordion mobile
 
@@ -116,7 +116,7 @@ export default function Step1() {
                         placeholder="Ilimitado"
                         onChange={(e) => {
                           const formattedCpf = formatCpf(e.target.value);
-                          setCpf(formattedCpf); // 'as any' removido se setCpf aceitar string
+                          setCpf(formattedCpf); 
                         }}
                       />
                       <AiFillUnlock className="lok-icon" />
@@ -175,8 +175,8 @@ export default function Step1() {
                 </select>
                 {selectedProgram && (
                   <img
-                    src={programImages[selectedProgram as any]}
-                    alt={selectedProgram as any}
+                    src={programImages[selectedProgram]}
+                    alt={selectedProgram}
                     className="program-image-mobile"
                   />
                 )}
@@ -205,7 +205,7 @@ export default function Step1() {
                       placeholder="Ilimitado"
                       onChange={(e) => {
                         const formattedCpf = formatCpf(e.target.value);
-                        setCpf(formattedCpf); // 'as any' removido se setCpf aceitar string
+                        setCpf(formattedCpf); 
                       }}
                     />
                     <AiFillUnlock className="lok-icon-mobile" />

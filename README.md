@@ -1,73 +1,85 @@
-# React + TypeScript + Vite
+      🌌 Projeto Aether: Domínio de Milhas & Ofertas 🌌
+      "Onde o código é rápido, a tipagem é estrita e a performance é a única métrica que importa."
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+      Este repositório contém o frontend da nossa aplicação, construída para ser extremamente rápida e livre de erros de tipagem. Utilizando a combinação mais potente de ferramentas modernas, garantimos que cada componente funcione com precisão cirúrgica.
 
-Currently, two official plugins are available:
+      ⚡ Tecnologias de Elite (The Stack)
+      Tecnologia	Função Principal	Status de Otimização
+      React	Biblioteca de UI de ponta.	Configurado para Fast Refresh
+      TypeScript	Garante segurança e tipagem estrita.	Strict Mode Ativo
+      Vite	Empacotador e Servidor de Desenvolvimento.	HMR (Hot Module Replacement) Otimizado
+      ESLint	Guardião da Qualidade do Código.	Type-Aware Rules (Nível Punitivo)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+      Exportar para as Planilhas
+      🚀 Como Iniciar a Operação (Dev Setup)
+      Pré-requisitos
+      Certifique-se de ter Node.js (LTS) e npm (ou Yarn/pnpm) instalados.
 
-## React Compiler
+      1. Clonar e Instalar
+      Bash
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+      # Clone este repositório
+      git clone https://github.com/Ericd3v/Milhas-pix.git
 
-## Expanding the ESLint configuration
+      # Navegue até o diretório do projeto
+      cd ./Minhas_Pix/milhas_pix
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+      # Instale as dependências
+      npm install
+      2. Ativar o Servidor de Desenvolvimento
+      O Vite inicia o servidor de desenvolvimento com HMR (Hot Module Replacement) ativado, garantindo que as mudanças no código sejam injetadas quase instantaneamente.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+      Bash
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+      npm run dev
+      O servidor estará rodando em http://localhost:5173/ (ou outra porta disponível).
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+      ⚙️ Configuração para Produtividade Máxima
+      1. O Compilador React (O Ponto de Virada)
+      Para atingir a performance máxima em produção e evitar re-renderizações desnecessárias, recomendamos a ativação do React Compiler (anteriormente conhecido como React Forget).
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+      🚨 Atenção: A ativação do compilador pode impactar ligeiramente a performance de dev e build. Siga a documentação oficial para integrá-lo:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+      ➡️ Documentação de Instalação do React Compiler
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+      2. O Domínio Absoluto do ESLint (Type-Aware Linting)
+      Nosso linter não perdoa. Ele está configurado para regras de tipagem rigorosas usando eslint-plugin-react-x e @typescript-eslint/eslint-plugin.
+
+      Para habilitar as regras mais estritas e as verificações baseadas em tipagem, use esta configuração no seu eslint.config.js:
+
+      JavaScript
+
+      // eslint.config.js - Configuração Stricta (Recomendada)
+      import tseslint from 'typescript-eslint'
+      import reactX from 'eslint-plugin-react-x'
+      import reactDom from 'eslint-plugin-react-dom'
+
+      export default defineConfig([
+        globalIgnores(['dist']),
+        {
+          files: ['**/*.{ts,tsx}'],
+          extends: [
+            // Tipagem
+            tseslint.configs.strictTypeChecked, 
+            // Estilo de Código
+            tseslint.configs.stylisticTypeChecked,
+            // Regras Específicas React (Performance & Erros Comuns)
+            reactX.configs['recommended-typescript'],
+            reactDom.configs.recommended,
+          ],
+          languageOptions: {
+            parserOptions: {
+              project: ['./tsconfig.node.json', './tsconfig.app.json'],
+              tsconfigRootDir: import.meta.dirname,
+            },
+          },
+        },
+      ])
+      📦 Construção e Implantação (Deployment)
+      Para preparar os artefatos de produção otimizados:
+
+      Bash
+
+      # Executa o build de produção (artefatos na pasta 'dist')
+      npm run build
+      Artefatos Gerados: A pasta dist contém a versão minificada, otimizada e pronta para o servidor que será usada em produção.
