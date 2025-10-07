@@ -252,9 +252,96 @@ export default function OffersList() {
         </div>
     </div>)
          : (
-            <div style={{width: '100%',display: 'flex', justifyContent:'center', alignItems:'center', color:'red' }}>
-                <p>NOVO COMPONENTE </p>
-            </div>
+            <div className="offers-list-mobile">
+        {/* Bloco de Ações (Minhas ofertas e Nova oferta) */}
+        <div className="mobile-actions">
+            <h1 className="mobile-offers-header">Minhas ofertas</h1>
+            <button className="mobile-btn-new-offer" onClick={() => navigate("/")}>
+                + Nova oferta
+            </button>
+        </div>
+        
+        {/* Busca e Filtros */}
+        <div className="mobile-search-filter">
+            <SearchBox placeholder="Login de acesso..." onSearch={handleSearch} />
+            
+            <select 
+                className="mobile-filter-select" 
+                value={selectedFilter} 
+                onChange={(e) => handleFilter(e.target.value)}>
+                <option value="" disabled>Filtros</option>
+                <option value="Ativa">Ativa</option>
+                <option value="Inativo">Inativo</option>
+                <option value="Em Utilizacao">Em Utilização</option>
+                <option value="TudoAzul">Tudo Azul</option>
+                <option value="Smiles">Smiles</option>
+            </select> 
+        </div>
+
+        <div className="mobile-offers-container">
+            {filtered.map((o) => (
+                <div key={o.offerId} className="offer-card-mobile">
+                    {/* Linha 1: Logo, Programa, Tipo de Oferta e Status/Data */}
+                    <div className="card-header-mobile">
+                        <div className="program-info-mobile">
+                            <img 
+                                src={handleLogo(o.loyaltyProgram)}
+                                alt={o.loyaltyProgram}
+                                className="program-logo-mobile"
+                            />
+                            <div className="program-details-mobile">
+                                <span 
+                                    style={handleColorText(o.loyaltyProgram)}
+                                    className="program-name-mobile">
+                                    {o.loyaltyProgram}
+                                </span>
+                                <span className="offer-type-mobile">
+                                    {o.offerType} 
+                                </span>
+                            </div>
+                        </div>
+                        <div className="status-date-mobile">
+                            <p
+                                className="status-pill-mobile"
+                                style={handleColorStatus(o.offerStatus)}>
+                                {/* Usa um span para o ponto azul/verde */}
+                                <span className="status-dot"></span>{o.offerStatus}
+                            </p>
+                            <p className="offer-date-mobile">
+                                {/* Formato: 21 Jun 2025 */}
+                                {new Date(o.createdAt).toLocaleString("pt-BR", {
+                                    day: '2-digit',
+                                    month:'short',
+                                    year:'numeric'
+                                }).replace(" de ", " ")}
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Linhas de detalhe (ID, Login, Milhas) */}
+                    <div className="card-details-row-mobile">
+                        <span className="detail-label">ID da oferta</span>
+                        <span className="detail-value">{o.offerId}</span>
+                    </div>
+                    <div className="card-details-row-mobile">
+                        <span className="detail-label">Login</span>
+                        <span className="detail-value">{o.accountLogin}</span>
+                    </div>
+                    <div className="card-details-row-mobile">
+                        <span className="detail-label">Milhas ofertadas</span>
+                        <span className="detail-value">{o.availableQuantity.toLocaleString("pt-BR")}</span>
+                    </div>
+
+                </div>
+            ))}
+
+            {filtered.length === 0 && (
+                <div className="no-data-mobile">
+                    <p>Nenhum dado encontrado</p>
+                </div>
+            )}
+        </div>
+    </div>
          )}
     </>
   );}

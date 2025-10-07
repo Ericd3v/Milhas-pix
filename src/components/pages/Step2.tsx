@@ -224,10 +224,10 @@ export default function Step2() {
                   para definir a média de milhas por emissão.
                 </p>
               </div>
-
+                      <h3>Ranking das ofertas</h3>
             <aside className="card side">
-          <h3>Ranking das ofertas</h3>
-          <ul className="ranking">
+          
+          <ul className="ranking" style={{borderTop:'solid 1px #ededed'}}>
             {loading ? (
               <li className="muted">Carregando...</li>
             ) : (
@@ -336,10 +336,22 @@ export default function Step2() {
           <p className="error-text">Escolha entre R$ 14,00 e R$ 16,56</p>
         </div>
 
-        {/* Ranking */}
-        <div className="ranking">
-          {loading ? <p>Carregando...</p> : <RankingList ranking={ranking} />}
-        </div>
+      {/* Ranking Mobile (Pills) */}
+           <div className="ranking-mobile-pills">
+       {loading ? (
+        <p className="muted" style={{ margin: '10px 0', textAlign: 'center' }}>Carregando...</p>
+              ) : (
+             ranking.map((item, index) => (
+               <div 
+                 className={`ranking-pill ${item.isUser ? 'ranking-pill-you' : ''}`}
+                    key={index} 
+>
+                 {item.isUser && "Você "}
+                  {item.position}º R$ {formatCurrency(item.value)}
+               </div>
+                     ))
+                   )}
+           </div>
 
         {/* Checkbox média */}
               <div className="checkbox-container-mobile">

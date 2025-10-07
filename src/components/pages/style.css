@@ -4,13 +4,14 @@
 body,
 html,
 #root {
+
   width: 100%;
   height: 100%;
   margin: 0;
 }
 
 .page {
-
+  
   font-family: "DM Sans", sans-serif;
   color: #2e3d50;
   font-weight: 500;
@@ -102,6 +103,286 @@ html,
   font-weight: 600;
   height: 2.6rem;
   cursor: pointer;
+}
+
+ /* --- 2. LAYOUT PRINCIPAL MOBILE --- */
+
+.offers-list-mobile {
+    padding-top: 55px; 
+    min-height: calc(100vh - 55px);
+}
+
+/* Títulos e Botões de Ação (Minhas ofertas / Nova oferta) */
+.mobile-actions {
+  width: 390px;
+  height: 40px;
+  transform: translateY(-140%);
+  border-bottom: solid 1px #EAEAEA;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 16px 10px;
+}
+
+.mobile-offers-header {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.mobile-btn-new-offer {
+  flex-direction: row;
+  width: 120px;
+  height: 32px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  padding: 8px 16px 8px 16px;
+  color: #fff;
+  background:#1E90FF ;
+  border: none;
+    
+}
+
+/* Busca e Filtros */
+.mobile-search-filter {
+    display: flex;
+    gap: 10px;
+    padding: 0 16px 20px;
+}
+/* Busca e Filtros */
+.mobile-search-filter-input {
+    width: 100%;
+    height: 32px;
+    top: 149px;
+    left: 20px;
+    border-radius: 20px;
+    border: solid 1px #D9D9D9;
+    padding: 8px 16px 8px 16px;
+    background-color: white;
+
+}
+
+/* Estilizando o campo de busca (SearchBox) para o visual da imagem */
+.mobile-search-filter > div:first-child { 
+    flex-grow: 1;
+    /* Ajuste o SearchBox para ter borda arredondada e ícone de lupa */
+}
+
+/* Estilizando o botão/select de Filtros */
+.mobile-filter-select {
+    width: 225px;
+    transform: translateX(18px);
+    
+     display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 8px;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+    background-color: white;
+    color: #555;
+    font-size: 0.9rem;
+    cursor: pointer;
+    appearance: none; 
+    
+}
+
+/* Container dos Cards */
+.mobile-offers-container {
+    padding: 10px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* --- 3. ESTILO DO CARD DE OFERTA --- */
+
+.offer-card-mobile {
+
+    width: 350px;
+    height: 147px;
+    display: table-row;;
+    border: solid 1px #D9D9D9 ;
+    border-radius: 20px;
+   
+}
+
+/* Seção Superior (Logo, Programa, Status, Data) */
+.card-header-mobile {
+    width: 350px;
+    height: 62px;
+    top: 201;
+    left: 20px;
+    border-radius:0 20px 0 20px;
+    border-bottom: solid 1px  #D9D9D9 ;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.program-info-mobile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.program-logo-mobile {
+
+  margin-left: 5px;
+    width: 38px;
+    height: 38px;
+    border-radius: 39px;
+    object-fit: contain;
+}
+
+.program-details-mobile {
+    flex-direction: column;
+      width: 99px;
+      height: 35px;
+      margin: 4px;
+      
+}
+
+.program-name-mobile {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.offer-type-mobile {
+    font-size: 0.8rem;
+    color: #777;
+    margin-top: 2px;
+}
+
+.status-date-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 3px;
+}
+
+/* Pill de Status */
+.status-pill-mobile {
+  width: 100%;
+  height: 19px;
+  
+  border-radius: 10px;
+  color:#C1D8EE ;
+  font-size: 0.7rem;
+  font-weight: 400;
+    white-space: nowrap; /* Não quebra a linha */
+}
+
+.status-pill-mobile .status-dot {
+    width: 100%;
+    height: 8px;
+    border-radius: 50%;
+    /* A cor de fundo será a cor do texto do elemento pai (herdada do JS) */
+    background-color: currentColor; }
+
+
+.offer-date-mobile {
+   flex-direction: row;
+    width: 60px;
+    height: 13px;
+    display: flex;
+    justify-content: space-around;
+    transform: translateY(-128%);
+     transform: translateX(-12%);
+    white-space: nowrap; 
+    
+}
+
+/* Linhas de Detalhe (ID, Login, Milhas) */
+.card-details-row-mobile {
+    width: 326px;
+    height: 15px;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+   font-size: 12px;
+}
+
+.detail-label {
+  
+    color: #777;
+    font-weight: 400;
+}
+
+.detail-value {
+    font-weight: 600;
+    color: #333;
+}
+
+/* Pill de Status */
+.status-pill-mobile {
+    margin-right:6px;
+   margin-top: 5px;
+    font-weight: 500;
+    border-radius: 20px;
+    display: flex;
+    align-items:center;
+
+}
+
+.status-pill-mobile .status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    /* O JS deve definir a cor de fundo do PAI, o ponto só copia a cor do texto */
+    background-color: currentColor; 
+}
+
+.offer-date-mobile {
+    font-size: 0.6rem;
+    color: #999;
+    
+}
+
+/* Linhas de Detalhe (ID, Login, Milhas) */
+.card-details-row-mobile {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+ 
+  
+}
+
+.card-details-row-mobile:first-of-type {
+    border-top: none; /* Remove a linha do primeiro detalhe */
+    padding-top: 10px;
+}
+
+.detail-label {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 5px;
+    width: 326px;
+    height: 61px;
+    color: #121212;
+    font-weight: 700;
+    font-family: 'Plus Jakarta Sans';
+}
+
+.detail-value {
+  flex-direction: row-reverse;
+  width: 100%;
+  height: 15px;
+  display: flex;
+  justify-content: space-between;
+   font-family: 'Plus Jakarta Sans';
+   line-height: 100%;
+   color: #121212;
+   transform: translateX(10%);
+
+}
+
+/* Estilo para quando não houver ofertas */
+.no-data-mobile {
+    text-align: center;
+    padding: 40px;
+    color: #777;
 }
 
 /* ===================== */
@@ -281,6 +562,120 @@ h2 .one {
   font-size: 14px;
 }
 
+/* ============================= */
+/*   RANKING MOBILE (Pills)      */
+/* ============================= */
+
+/* Container que envolve todas as pílulas */
+.ranking-mobile-pills {
+  display: flex;
+  flex-wrap: wrap; /* Permite que as pílulas quebrem para a próxima linha */
+  justify-content: center; /* Centraliza as pílulas horizontalmente */
+  gap: 8px; /* Espaço entre as pílulas */
+  padding: 16px 8px; /* Padding ao redor do grupo */
+}
+
+/* Estilo de cada pílula */
+.ranking-pill {
+  padding: 8px 16px;
+  border-radius: 44px; /* Totalmente arredondado */
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  /* Estilo padrão (Itens que não são o usuário) */
+  background-color: #fff;
+  border: 1px solid #e2e2e2;
+  color: #029df7; /* Cor do texto azul, como na imagem de exemplo */
+}
+
+/* Estilo da pílula do usuário ("Você") */
+.ranking-pill-you {
+  background-color: #e6fff3; /* Fundo verde claro */
+  border-color: #25a25a; /* Borda verde */
+  color: #25a25a; /* Cor do texto verde */
+  font-weight: 700;
+}
+
+/* Container geral do ranking (opcional, para espaçamento) */
+.ranking-container {
+    margin-top: 20px; /* Ajusta a margem superior do ranking */
+    margin-bottom: 20px;
+}
+
+/* Título "Ranking das ofertas" */
+.ranking-title {
+    font-size: 16px; /* Ajusta o tamanho da fonte */
+    font-weight: 500; /* Peso da fonte */
+    color: #2E3D50; /* Cor do texto */
+    margin-bottom: 15px; /* Espaço abaixo do título */
+}
+
+/* A lista UL que contém os itens */
+.ranking-list {
+    list-style: none; /* Remove os marcadores de lista */
+    padding: 0;
+    margin: 0;
+    border: 1px solid #E2E2E2; /* Borda externa do ranking */
+    border-radius: 8px; /* Bordas arredondadas */
+    overflow: hidden; /* Garante que as bordas arredondadas funcionem com os itens internos */
+}
+
+/* Cada item individual do ranking (1º, 2º, etc.) */
+.ranking-item {
+    display: flex;
+    align-items: center; /* Alinha verticalmente */
+    padding: 12px 16px; /* Padding interno */
+    background-color: #fff; /* Fundo branco para os itens */
+    border-bottom: 1px solid #E2E2E2; /* Linha divisória entre os itens */
+}
+
+/* Remove a borda inferior do último item */
+.ranking-list .ranking-item:last-child {
+    border-bottom: none;
+}
+
+/* Posição (1º, 2º, 3º, etc.) */
+.ranking-position {
+    font-size: 14px;
+    font-weight: 700; /* Mais negrito */
+    color: #1E90FF; /* Cor azul para a posição */
+    width: 30px; /* Largura fixa para alinhar */
+    text-align: left;
+    margin-right: 10px; /* Espaço entre a posição e o valor */
+}
+
+/* Valor (R$ 15,23, R$ 16,32, etc.) */
+.ranking-value {
+    font-size: 14px;
+    font-weight: 500;
+    color: #2E3D50;
+    flex-grow: 1; /* Permite que o valor ocupe o espaço restante */
+    text-align: right; /* Alinha o valor à direita */
+}
+
+/* Estilo para o item específico do usuário (com o selo "Você") */
+.ranking-item-you {
+    background-color: #F0FFF5; /* Fundo verde claro */
+}
+
+.ranking-item-you .ranking-position,
+.ranking-item-you .ranking-value {
+    color: #25A25A; /* Texto verde para este item */
+    font-weight: 600; /* Um pouco mais negrito */
+}
+
+/* O selo "Você" */
+.ranking-you-tag {
+    background-color: #D1FAE5; /* Fundo mais escuro para o selo */
+    color: #25A25A; /* Texto verde */
+    font-size: 10px; /* Tamanho da fonte menor */
+    font-weight: 700; /* Negrito */
+    padding: 4px 8px; /* Padding interno */
+    border-radius: 20px; /* Bordas bem arredondadas (tipo "pill") */
+    margin-left: 10px; /* Espaçamento à esquerda do valor */
+}
 .form-row input:focus,
 .form-row select:focus {
   outline: none;
@@ -656,7 +1051,16 @@ label p {
   box-shadow: 0 0 0 2px rgba(30,144,255,0.2);
 }
 
-/* Pills */
+
+.step2-label {
+  display: flex;
+  gap: 8px;
+  margin-top: 18px;
+  justify-content: center;
+}
+
+
+
 
 
 .pill {
@@ -678,81 +1082,7 @@ label p {
   
 }
 
-.step2-label {
-  display: flex;
-  gap: 8px;
-  margin-top: 18px;
-  justify-content: center;
-}
 
-/* Ranking */
-
-.ranking {
-  list-style: none;
-  margin: 276px;
-  height: 52px;
-  padding: 56px;
-  list-style: none;
-  
-  
-  
-}
-
-.ranking li {
-  display: inline-flex;           /* Horizontal, permite centralizar conteúdo */
-  align-items: center;            /* Alinha verticalmente o conteúdo */
-  justify-content: center;        /* Centraliza horizontalmente o conteúdo */
-  width: 80px;                    /* Largura */
-  height: 30px;                   /* Altura fixa */
-  border-radius: 50px;            /* Bordas arredondadas */
-  border: 1px solid #ccc;         /* Borda 1px (cor genérica, pode trocar) */
-  font-size: 12px;                 /* Tamanho de fonte sugerido */
-  cursor: pointer;                /* Indica que é clicável */
-  background-color: white;        /* Cor de fundo padrão */
-  transition: background-color 0.2s, color 0.2s 3;
-}
-
-
-.ranking li .position {
-  font-weight: 700; 
-  color: #1e3a8a; 
-}
-
-.ranking li .value {
-  font-weight: 500;
-  color: #0284c7; 
-}
-
-/* Ajustes para a classe "Você" */
-.ranking li .you {
-  width: 100%;
-  background-color: #d1fae5;
-  border-radius: 200px;
-  font-weight: 600;
-  color: #10b981;
-  display: inline-block; 
-  margin-left: -10px;
-  font-size: 10px;
-  }
-
-li strong{
-  color: #1E90FF
- 
-}
-
-.ranking li .position,
-.ranking li .value,
-.ranking li .you {
-  
-  font-size: 12px;
-  display: inline-block; /* Colocando todos os itens (posição, valor, "Você") lado a lado */
-}
-
-
-.ranking li .position,
-.ranking li .value {
-  margin-right: 8px; 
-}
 
 /* Estilo para "Receba até" */
 .receba-ate {
@@ -940,6 +1270,7 @@ li strong{
 
 /* Texto de termos */
 .terms {
+  margin: 30px;
   font-size: 18px;
   color: #6b7280;
   text-align: center;
@@ -1110,7 +1441,7 @@ li strong{
 header-mobile
 /* ============================= */
 .content-mobile{ 
-  width: 340px;
+  width: 100%;
   height: 465px;
   padding: 16px 16px 12px;
 
@@ -1119,7 +1450,7 @@ header-mobile
     flex-direction: column;
     border-radius: 8px;
     width: 308px;
-    height: 480px;
+    height: 320px;
     margin: 32px;
     border: solid 1px #E2E2E2 ;
     
@@ -1135,7 +1466,7 @@ header-mobile
 .select-icon-mobile{
   color: #00478f;
   width: 30px;
-  height: 30px;
+  height: 20px;
   position: absolute;
   margin: 0 0 0 -9px;
 }
@@ -1244,15 +1575,6 @@ header-mobile
   margin-top: 4px;
 }
 
-/* ============================= */
-/*   RANKING                     */
-/* ============================= */
-.ranking {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 12px 0;
-}
 
 .rank-item {
   padding: 6px 12px;
@@ -1482,10 +1804,11 @@ header-mobile
 }
 
 .program-select-mobile2 input{
+  margin-left:18px ;
   width: 276px;
   height: 44px;
   border-radius: 44px;
-  padding: 10px 14px 10px 16px;
+  padding: 10px 14px 10px 55px;
 }
 
 
@@ -1549,7 +1872,7 @@ header-mobile
 .lok-icon-mobile{
   position: relative;
   top: 8px;
-  font-size: 30px;
+  font-size: 20px;
   transform: translateX(-140%);
   color:#8F8F8F ;
 }
@@ -1569,12 +1892,12 @@ header-mobile
   box-sizing: border-box;
   width: 30px;
   height: 36px;
-  top: 38px;
+  top: 39px;
   display: flex;
   position: relative;
   font-size: 20px;
   padding:4px;
-  transform: translateX(30%);
+  transform: translateX(94%);
   border-radius:44px;
   background: rgba(245, 219, 219, 1);
   color: rgba(220, 43, 43, 1);
@@ -1696,14 +2019,14 @@ header-mobile
 .toggle-header {
   /* Garante que o ícone e o texto fiquem na mesma linha */
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
 
-  padding: 30px; 
+  padding: 10px; 
   border: 1px solid #ccc;
   border-radius: 8px;
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 1px;
 }
 
 
@@ -1731,7 +2054,7 @@ header-mobile
   opacity: 1;
 }
 
-/* 4. Ajuste para o ícone '+' virar '−' (opcional, mas recomendado) */
+/* 4. Ajuste para o ícone '+' virar '−'  */
 .toggle-header .plus {
     /* Por padrão, o ícone '+' é exibido */
     display: block;
@@ -1748,4 +2071,182 @@ header-mobile
 }
 .program-content-mobile.open + .toggle-header span {
     display: block;
+}
+
+/*===========================*/
+/*======== STEP 3 ==========*/
+
+.text-step-mobile3 {
+  width: 100%;
+  height: 28px;
+  font-weight: 500;
+  font-size: 16px;
+  transform: translateY(-18px);
+}
+
+.header-mobile3{
+  
+  width: 308px;
+  height: 52px;
+  padding: 12px;
+  margin: 8px;
+  border-bottom: solid 1px #E2E2E2;
+}
+
+
+.menos{
+  width: 20px;
+  height: 20px;
+  position:absolute;
+  transform: translateX(140px);
+  
+  
+}
+.card-mobile3{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto; 
+  border-radius: 8px;
+  border: solid 1px #e2e2e2;
+}
+
+    
+
+    .form-mobile {
+        margin: 12px;
+        padding: 0 12px;
+        width: auto; /* Garante que o padding e margin funcionem corretamente */
+    }
+
+    .form-grid {
+        display: flex;
+        flex-direction: column; 
+        gap: 20px; 
+        width: 100%; }
+
+
+.form-group-mobile {
+  width: 100%; 
+  display: flex;
+  flex-direction: column;
+}
+
+
+.form-group-mobile .input-wrapper-mobile {
+  width: 100%;
+}
+
+.form-group-mobile .input-wrapper-mobile input {
+  width: 100%;
+  height: 44px; 
+  padding: 10px 14px 10px 44px;
+  box-sizing: border-box; 
+}
+
+
+.form-mobile label {
+  font-family: "DM Sans";
+  width: 100%;
+  height: auto; 
+  font-weight: 500;
+  font-size: 14px; 
+  margin-bottom: 4px;
+}
+
+.card-row-mobile{
+  flex-direction: row;
+  width: 100%;
+  height: 91px;
+  border: solid 1px #E2E2E2;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 8px;
+}
+.h4-form-mobile{
+  flex-direction: row;
+  width: 100%;
+  height: 67px;
+  margin: 8px;
+}
+.p-form-mobile{ 
+  flex-direction: row;
+  width: 284px;
+  height: 38px;
+  font-size: 12px;
+  line-height: 160%;
+  color:#475569 ;
+  font-weight: 400;
+  transform: translateY(-140%);
+
+}
+
+/*================================*/
+/*====== STEP 4 =========*/
+/*================================*/
+
+.card-mobile4{
+  flex-direction: column;
+  width: 100%;
+  height: 265px;
+  padding: 16px;
+  margin: 16px;
+}
+
+/* Contêiner do Rodapé Fixo */
+.footer-fixed-actions {
+  height: 93px;
+  position: fixed; 
+  bottom: 0; 
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 17px 16px; 
+  background-color: #fff; 
+  border-top: 1px solid #e5e7eb; 
+  z-index: 1000; 
+  gap: 6px;
+ }
+
+/* Estilo do Botão "Sair" (Secundário) */
+.btn-secondary {
+
+  background-color: #fff; 
+  color: #080808; 
+  border: 1px solid #ccc;
+  border-radius: 44px;
+  padding: 10px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  flex-grow: 1; /* Permite que o botão secundário cresça */
+  height: 44px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #f3f4f6;
+  color: #00d9ff;
+}
+
+/* Estilo do Botão Principal no Rodapé */
+.footer-fixed-actions .btn-primary {
+  flex: Z; /* Ocupa uma parte maior do espaço */
+  max-width: 100px; /* Define uma largura máxima para o botão azul ser mais centralizado */
+  padding: 10px 10px;
+  font-size: 16px;
+  font-weight: 600;
+  height: 44px;
+  
+  /* Garantir que o conteúdo interno (texto/loader) esteja CENTRALIZADO */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-fixed-actions .btn-primary .player-container {
+  /* Certifica-se que o lottie player está centralizado */
+  margin: 0 auto; 
 }

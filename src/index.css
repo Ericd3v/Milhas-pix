@@ -84,13 +84,17 @@
   background: var(--blue);
   color: white;
   border-color: var(--blue);
+
 }
 
-.form-grid {
+@media  (min-width: 768px) {
+  .form-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
 }
+}
+
 .offers-table {
   width: 100%;
   border-collapse: collapse;

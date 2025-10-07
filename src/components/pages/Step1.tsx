@@ -198,7 +198,7 @@ export default function Step1() {
                   <h2 className="text-mobile2">CPFs Disponíveis</h2>
                   <div className="div-mobile">
                     <input
-                      className="mobile"
+                      className="mobile" style={{background:'#E2E2E2'}}
                       type="text"
                       maxLength={14} // 14 é o tamanho do CPF formatado (XXX.XXX.XXX-XX)
                       value={cpf || ""}
