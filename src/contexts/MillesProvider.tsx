@@ -9,7 +9,7 @@ interface IMilesProps {
 
 export default function MilesProvider({ children }: IMilesProps) {
   const [cpf, setCpf] = useState<string>("");
-  const [selectedProgram, setSelectedProgram] = useState<string | null>(null);
+  const [selectedProgram, setSelectedProgram] = useState<string>("")
   const navigate = useNavigate();
 
   return (

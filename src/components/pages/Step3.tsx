@@ -20,7 +20,7 @@ export default function Step3() {
     pass,
   };
 
-  const chosenImage = selectedProgram ? programImages[selectedProgram as any] : null;
+  const chosenImage = selectedProgram ? programImages[selectedProgram] : null;
 
   // States
   const [phone, setPhone] = useState("");
@@ -165,7 +165,7 @@ export default function Step3() {
                 </h2>
                 {chosenImage && (
                   <div className="program-logo">
-                    <img src={chosenImage} alt={selectedProgram as any || "Programa"} />
+                    <img src={chosenImage} alt={selectedProgram || "Programa"} />
                   </div>
                 )}
               </div>
@@ -226,7 +226,7 @@ export default function Step3() {
                 </h2>
                 {chosenImage && (
                   <div className="program-logo">
-                    <img src={chosenImage} alt={selectedProgram as any || "Programa"} />
+                    <img src={chosenImage} alt={selectedProgram || "Programa"} />
                   </div>
                 )}
               </div>
