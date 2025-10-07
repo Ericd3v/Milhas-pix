@@ -89,7 +89,7 @@ export default function OffersList() {
 
   // Simula a chamada à API para buscar as ofertas
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/simulate-offers-list`)
+    fetch(` ${import.meta.env.VITE_API_URL}./api/simulate-offers-list`)
       .then((r) => r.json())
       .then((data: OffersApiResponse) => {
         setOffers(data.offers || []);
