@@ -225,20 +225,16 @@ export default function Step2() {
                 </p>
               </div>
 
-              <h2 className="ranking-text">Ranking das ofertas</h2>
-              <table>
-                <tbody>
-                  <tr className="ranking">
-                    {loading ? (
-                      <td className="muted">Carregando...</td>
-                    ) : (
-                      <td>
-                        <RankingList ranking={ranking} />
-                      </td>
-                    )}
-                  </tr>
-                </tbody>
-              </table>
+            <aside className="card side">
+          <h3>Ranking das ofertas</h3>
+          <ul className="ranking">
+            {loading ? (
+              <li className="muted">Carregando...</li>
+            ) : (
+              <RankingList ranking={ranking} />
+            )}
+          </ul>
+        </aside>
 
               <h2
                 style={{
@@ -272,7 +268,7 @@ export default function Step2() {
   // Mobile version
   // =========================
   return (
-    <div className="container">
+
       <div className="page-mobile">
     <section className="content-mobile">
       <div className="card-mobile2">
@@ -383,7 +379,5 @@ export default function Step2() {
       </div>
     </section>
   </div>
-    </div>
-      
     
 );}

@@ -22,7 +22,7 @@ export default function RankingList({ ranking }: { ranking: RankingItem[] }) {
           .includes("essa será sua posição");
 
         return (
-          <li 
+          <tbody 
             key={rank.position}
             className={isHighlight ? "highlight" : undefined}
           >
@@ -32,7 +32,7 @@ export default function RankingList({ ranking }: { ranking: RankingItem[] }) {
             </p>
 
             {isHighlight && <span className="you" >Você</span>}
-          </li>
+          </tbody>
         );
       })}
     </>
